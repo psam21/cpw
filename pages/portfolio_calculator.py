@@ -48,7 +48,12 @@ def render_portfolio_page():
             debug_log(f"💰 Prices loaded for portfolio calculation. Available: {list(current_prices.keys())}", "SUCCESS", "portfolio_prices_loaded")
             
             # Calculate total portfolio value
-            total_value = _calculate_total_portfolio_value(current_prices)
+            try:
+                total_value = _calculate_total_portfolio_value(current_prices)
+                debug_log(f"✅ Portfolio value calculated: ${total_value:,.2f}", "SUCCESS", "portfolio_value_calculated")
+            except Exception as calc_e:
+                debug_log(f"❌ Error calculating portfolio value: {calc_e}", "ERROR", "portfolio_value_error")
+                total_value = 0
             
             with col_total:
                 st.metric("💰 Total Portfolio Value", f"${total_value:,.2f}")
@@ -56,27 +61,52 @@ def render_portfolio_page():
             # === PORTFOLIO MANAGEMENT ===
             st.markdown("<br>", unsafe_allow_html=True)
             st.subheader("⚙️ Portfolio Management")
-            _render_portfolio_management(current_prices)
+            try:
+                _render_portfolio_management(current_prices)
+                debug_log("✅ Portfolio management rendered successfully", "SUCCESS", "portfolio_management_rendered")
+            except Exception as mgmt_e:
+                debug_log(f"❌ Error rendering portfolio management: {mgmt_e}", "ERROR", "portfolio_management_error")
+                st.error("Failed to render portfolio management section")
             
             # === PORTFOLIO OVERVIEW ===
             st.markdown("<br>", unsafe_allow_html=True)
             st.subheader("📊 Portfolio Overview")
-            _render_portfolio_overview(current_prices)
+            try:
+                _render_portfolio_overview(current_prices)
+                debug_log("✅ Portfolio overview rendered successfully", "SUCCESS", "portfolio_overview_rendered")
+            except Exception as overview_e:
+                debug_log(f"❌ Error rendering portfolio overview: {overview_e}", "ERROR", "portfolio_overview_error")
+                st.error("Failed to render portfolio overview section")
             
             # === DETAILED HOLDINGS ===
             st.markdown("<br>", unsafe_allow_html=True)
             st.subheader("📈 Detailed Holdings")
-            _render_detailed_holdings(current_prices)
+            try:
+                _render_detailed_holdings(current_prices)
+                debug_log("✅ Detailed holdings rendered successfully", "SUCCESS", "detailed_holdings_rendered")
+            except Exception as holdings_e:
+                debug_log(f"❌ Error rendering detailed holdings: {holdings_e}", "ERROR", "detailed_holdings_error")
+                st.error("Failed to render detailed holdings section")
             
             # === PORTFOLIO CHARTS ===
             st.markdown("<br>", unsafe_allow_html=True)
             st.subheader("📊 Portfolio Visualization")
-            _render_portfolio_charts(current_prices)
+            try:
+                _render_portfolio_charts(current_prices)
+                debug_log("✅ Portfolio charts rendered successfully", "SUCCESS", "portfolio_charts_rendered")
+            except Exception as chart_e:
+                debug_log(f"❌ Error rendering portfolio charts: {chart_e}", "ERROR", "portfolio_charts_error")
+                st.error("Failed to render portfolio charts")
             
             # === PERFORMANCE TRACKING ===
             st.markdown("<br>", unsafe_allow_html=True)
             st.subheader("📈 Performance Tracking")
-            _render_performance_tracking(current_prices)
+            try:
+                _render_performance_tracking(current_prices)
+                debug_log("✅ Performance tracking rendered successfully", "SUCCESS", "performance_tracking_rendered")
+            except Exception as perf_e:
+                debug_log(f"❌ Error rendering performance tracking: {perf_e}", "ERROR", "performance_tracking_error")
+                st.error("Failed to render performance tracking")
             
             # Data source info
             st.markdown("<br>", unsafe_allow_html=True)
