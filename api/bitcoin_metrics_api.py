@@ -23,8 +23,8 @@ class BitcoinMetrics:
         # Set up API logging if debug_logger is available
         if hasattr(debug_logger, '__module__'):
             try:
-                # Try to import the API logging function
-                from app import debug_log_api_call
+                # Import the API logging function from utils
+                from utils.system_logger import debug_log_api_call
                 self.debug_log_api = debug_log_api_call
             except ImportError:
                 pass

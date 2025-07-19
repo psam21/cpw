@@ -2,7 +2,7 @@
 Why Bitcoin page content.
 """
 import streamlit as st
-from utils.debug_logger import debug_log_user_action
+from utils.system_logger import debug_log_user_action
 
 
 def render_why_bitcoin_page():

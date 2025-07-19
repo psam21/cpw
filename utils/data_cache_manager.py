@@ -4,18 +4,18 @@ Data fetching utilities with caching for the Bitcoin dashboard.
 import streamlit as st
 import time
 from datetime import datetime
-from utils.debug_logger import debug_log, debug_log_api_call, debug_log_data_processing
+from utils.system_logger import debug_log, debug_log_api_call, debug_log_data_processing
 
 
 @st.cache_data(ttl=300)
 def cached_get_mempool_info():
-    from mempool_data import get_mempool_info
+    from api.mempool_network_api import get_mempool_info
     return get_mempool_info()
 
 
 @st.cache_data(ttl=300)
 def cached_get_mempool_stats():
-    from mempool_data import get_mempool_stats
+    from api.mempool_network_api import get_mempool_stats
     return get_mempool_stats()
 
 
@@ -29,7 +29,7 @@ def cached_get_crypto_prices():
     debug_log("Starting multi-exchange price fetch...", "INFO", "price_fetch_start")
     
     try:
-        from multi_exchange import get_multi_exchange_prices
+        from api.multi_exchange_aggregator import get_multi_exchange_prices
         debug_log("Successfully imported multi_exchange module", "SUCCESS", "module_import")
         
         debug_log_api_call("Multi-Exchange", "get_multi_exchange_prices()", "STARTING")
@@ -79,7 +79,7 @@ def cached_get_crypto_prices():
         
         # Try to get more details about the import error
         try:
-            import multi_exchange
+            import api.multi_exchange_aggregator
             debug_log("multi_exchange module import successful on retry", "INFO")
         except Exception as import_err:
             debug_log(f"multi_exchange import failed: {import_err}", "ERROR")
@@ -102,5 +102,5 @@ def cached_get_binance_prices():
 
 @st.cache_data(ttl=300)
 def cached_get_btc_ohlc_data():
-    from bitfinex_data import get_btc_ohlc_data
+    from api.bitfinex_exchange_api import get_btc_ohlc_data
     return get_btc_ohlc_data()
