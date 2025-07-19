@@ -88,9 +88,14 @@ def render_portfolio_page():
                 st.caption("📡 Source: CoinGecko API")
             
         except Exception as e:
-            debug_log(f"❌ Error in portfolio page: {str(e)}", "ERROR", "portfolio_page_error")
-            st.error(f"❌ Error loading portfolio data: {str(e)}")
-            st.code(f"Error type: {type(e).__name__}\nRaw error: {repr(e)}", language="python")
+            # Ensure exception is properly handled even if it's None or unusual
+            error_str = str(e) if e is not None else "Unknown error (None exception)"
+            error_type = type(e).__name__ if e is not None else "NoneType"
+            error_repr = repr(e) if e is not None else "None"
+            
+            debug_log(f"❌ Error in portfolio page: {error_str}", "ERROR", "portfolio_page_error")
+            st.error(f"❌ Error loading portfolio data: {error_str}")
+            st.code(f"Error type: {error_type}\nRaw error: {error_repr}", language="python")
             st.info("💡 Check Debug Logs for detailed error information")
 
 
@@ -519,12 +524,28 @@ def _render_performance_tracking(current_prices):
 
 
 def _calculate_total_portfolio_value(current_prices):
-    """Calculate total portfolio value"""
+    """Calculate total portfolio value with proper None checking"""
     total_value = 0
     
+    # Handle case where current_prices might not have the expected structure
+    if not current_prices or not isinstance(current_prices, dict):
+        return total_value
+    
+    # Extract prices from the multi-exchange response structure
+    prices = current_prices.get('prices', {}) if 'prices' in current_prices else current_prices
+    
     for crypto_id, amount in st.session_state.portfolio.items():
-        if amount > 0 and crypto_id in current_prices:
-            price = current_prices[crypto_id]['usd']
-            total_value += amount * price
+        if amount > 0 and crypto_id in prices:
+            price_data = prices[crypto_id]
+            # Handle both direct price format and nested format
+            if isinstance(price_data, dict) and 'usd' in price_data:
+                price = price_data['usd']
+            elif isinstance(price_data, (int, float)):
+                price = price_data
+            else:
+                continue  # Skip invalid price data
+                
+            if price and price > 0:
+                total_value += amount * price
     
     return total_value

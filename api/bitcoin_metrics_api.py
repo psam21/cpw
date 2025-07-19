@@ -274,7 +274,7 @@ class BitcoinMetrics:
     def get_transactions_alternative(self):
         """Get transaction count from mempool.space API"""
         self.debug_log("🔄 Getting transaction data from mempool.space...", "INFO")
-        url = "https://mempool.space/api/v1/statistics/2w"
+        url = "https://mempool.space/api/v1/statistics/1w"  # Fixed: Use 1w instead of 2w
         data = self.safe_request(url, api_name="Mempool-Transactions")
         
         if data and isinstance(data, list):
