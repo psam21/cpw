@@ -15,6 +15,7 @@ from api.binance_exchange_api import get_binance_price
 from utils.system_logger import debug_log, debug_log_api_call, debug_log_data_processing, debug_log_user_action, clear_debug_logs
 from utils.data_cache_manager import cached_get_mempool_info, cached_get_mempool_stats, cached_get_crypto_prices, cached_get_binance_prices, cached_get_btc_ohlc_data
 from utils.portfolio_session_manager import initialize_portfolio_session, reset_to_default_portfolio, clear_portfolio
+from utils.data_validation import is_valid_data  # added unified data validator
 
 # Import page modules
 from pages.bitcoin_education import render_why_bitcoin_page
@@ -156,62 +157,54 @@ def main():
             
             # Log data availability
             debug_log("Data availability check:", "INFO", "data_availability")
-            debug_log(f"- Mempool data: {'✅' if mempool_data and 'error' not in mempool_data else '❌'}", "INFO", "data_availability")
-            debug_log(f"- Mempool stats: {'✅' if mempool_stats and 'error' not in mempool_stats else '❌'}", "INFO", "data_availability")
-            debug_log(f"- Crypto prices: {'✅' if crypto_prices else '❌'}", "INFO", "data_availability")
-            debug_log(f"- Binance prices: {'✅' if binance_prices else '❌'}", "INFO", "data_availability")
+            debug_log(f"- Mempool data: {'✅' if is_valid_data(mempool_data) else '❌'}", "INFO", "data_availability")
+            debug_log(f"- Mempool stats: {'✅' if is_valid_data(mempool_stats) else '❌'}", "INFO", "data_availability")
+            debug_log(f"- Crypto prices: {'✅' if is_valid_data(crypto_prices) else '❌'}", "INFO", "data_availability")
+            debug_log(f"- Binance prices: {'✅' if is_valid_data(binance_prices) else '❌'}", "INFO", "data_availability")
             
-            # Check Bitcoin OHLC data validity with proper None handling
-            try:
-                import pandas as pd
-                if btc_data is None:
-                    btc_data_valid = False
-                elif isinstance(btc_data, pd.DataFrame):
-                    btc_data_valid = not btc_data.empty
-                else:
-                    # btc_data is some other type, treat as invalid
-                    btc_data_valid = False
-            except Exception as e:
-                debug_log(f"Error checking btc_data validity: {str(e)}", "ERROR", "btc_data_check")
-                btc_data_valid = False
-            
+            # Unified Bitcoin OHLC validity check
+            btc_data_valid = is_valid_data(btc_data)
+             
             debug_log(f"- Bitcoin OHLC: {'✅' if btc_data_valid else '❌'}", "INFO", "data_availability")
-            
+             
             # Data loading success display
-            if (mempool_data and 'error' not in mempool_data and 
-                mempool_stats and 'error' not in mempool_stats and 
-                crypto_prices and binance_prices and btc_data_valid):
+            if all([
+                is_valid_data(mempool_data),
+                is_valid_data(mempool_stats),
+                is_valid_data(crypto_prices),
+                is_valid_data(binance_prices),
+                btc_data_valid
+            ]):
                 st.success(f"✅ All cryptocurrency data loaded successfully! ({total_time}ms)")
                 # Success is logged but not displayed to user (already in debug logs)
-                pass
             else:
                 # Show partial success
                 loaded_services = []
                 failed_services = []
-                
-                if mempool_data and 'error' not in mempool_data:
+
+                if is_valid_data(mempool_data):
                     loaded_services.append("Mempool")
                 else:
                     failed_services.append("Mempool")
-                
-                if crypto_prices:
+
+                if is_valid_data(crypto_prices):
                     loaded_services.append("CoinGecko")
                 else:
                     failed_services.append("CoinGecko")
-                
-                if binance_prices:
+
+                if is_valid_data(binance_prices):
                     loaded_services.append("Binance")
                 else:
                     failed_services.append("Binance")
-                
+
                 if btc_data_valid:
                     loaded_services.append("Bitcoin OHLC")
                 else:
                     failed_services.append("Bitcoin OHLC")
-                
+
                 if loaded_services:
                     st.success(f"✅ Loaded: {', '.join(loaded_services)}")
-                
+
                 if failed_services:
                     st.warning(f"⚠️ Failed: {', '.join(failed_services)}")
             

@@ -4,6 +4,7 @@ Cloud-friendly version with comprehensive historical data from 2013.
 """
 import pandas as pd
 import requests
+from utils.http_config import default_timeout as TIMEOUT
 import time
 from datetime import datetime
 
@@ -24,7 +25,7 @@ def get_bitcoin_ohlc_batch(symbol='BTCUSD', timeframe='7D', start_timestamp=None
         if start_timestamp:
             params['start'] = int(start_timestamp * 1000)  # Convert to milliseconds
         
-        response = requests.get(url, params=params, timeout=30)
+        response = requests.get(url, params=params, timeout=TIMEOUT)
         response.raise_for_status()
         
         data = response.json()

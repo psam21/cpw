@@ -8,6 +8,7 @@ from datetime import datetime, timedelta
 import pandas as pd
 from utils.system_logger import debug_log, debug_log_user_action, debug_log_api_call
 from utils.data_cache_manager import cached_get_crypto_prices
+from utils.http_config import default_timeout as TIMEOUT
 import requests
 
 
@@ -36,7 +37,7 @@ def render_bitcoin_ohlc_page():
             cached_get_crypto_prices.clear()
             debug_log("🔄 User triggered OHLC data refresh", "INFO", "user_refresh")
             st.rerun()
-    
+
     # Get current price first
     with st.spinner("🔄 Loading current Bitcoin price..."):
         current_data = cached_get_crypto_prices()
@@ -133,7 +134,7 @@ def get_ohlc_data(time_range):
             'User-Agent': 'Bitcoin Dashboard/1.0'
         }
         
-        response = requests.get(url, params=params, headers=headers, timeout=10)
+        response = requests.get(url, params=params, headers=headers, timeout=TIMEOUT)
         response.raise_for_status()
         
         response_time = round((time.time() - start_time) * 1000, 2)
