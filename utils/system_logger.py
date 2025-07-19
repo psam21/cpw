@@ -120,7 +120,10 @@ def debug_log_data_processing(operation, input_data, output_data, processing_tim
         if output_data is None:
             output_size = 0
         elif isinstance(output_data, pd.DataFrame):
-            output_size = len(output_data) if hasattr(output_data, 'empty') and not output_data.empty else 0
+            if hasattr(output_data, 'empty'):
+                output_size = len(output_data) if output_data.empty == False else 0
+            else:
+                output_size = 0
         else:
             output_size = len(str(output_data))
     except Exception:
@@ -130,7 +133,10 @@ def debug_log_data_processing(operation, input_data, output_data, processing_tim
         if input_data is None:
             input_size = 0
         elif isinstance(input_data, pd.DataFrame):
-            input_size = len(input_data) if hasattr(input_data, 'empty') and not input_data.empty else 0
+            if hasattr(input_data, 'empty'):
+                input_size = len(input_data) if input_data.empty == False else 0
+            else:
+                input_size = 0
         else:
             input_size = len(str(input_data))
     except Exception:
