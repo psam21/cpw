@@ -4,6 +4,7 @@ A Streamlit application to display cryptocurrency data.
 import streamlit as st
 import pandas as pd
 import plotly.graph_objects as go
+import requests
 from datetime import datetime
 # Import API modules
 from api.bitfinex_exchange_api import get_btc_ohlc_data, fetch_and_update_data
@@ -201,9 +202,31 @@ def main():
             
             st.info("💡 Check the 'Debug Logs' tab for detailed error information.")
             
+        except ImportError as e:
+            debug_log(f"❌ Import error during data loading: {str(e)}", "ERROR", "import_error")
+            st.error(f"🔧 Import Error: {str(e)}")
+            st.info("💡 This may be due to missing dependencies. Check the 'Debug Logs' tab for details.")
+            mempool_data = {'error': 'Import error'}
+            mempool_stats = {'error': 'Import error'}
+            binance_prices = {'BTC': None, 'ETH': None, 'BNB': None, 'POL': None}
+            btc_data = pd.DataFrame()
+            
+        except requests.exceptions.RequestException as e:
+            debug_log(f"❌ Network error during data loading: {str(e)}", "ERROR", "network_error")
+            st.warning("🌐 Network connectivity issues - using fallback data")
+            st.info("💡 Check your internet connection and try refreshing the page.")
+            mempool_data = {'error': 'Network error'}
+            mempool_stats = {'error': 'Network error'}
+            binance_prices = {'BTC': None, 'ETH': None, 'BNB': None, 'POL': None}
+            btc_data = pd.DataFrame()
+            
         except Exception as e:
             debug_log(f"❌ Critical error during data loading: {str(e)}", "ERROR", "data_loading_error")
+            debug_log(f"Error type: {type(e).__name__}", "ERROR", "error_details")
+            debug_log(f"Error details: {repr(e)}", "ERROR", "error_details")
             st.warning("⚠️ Using fallback data due to loading errors")
+            st.error(f"🔍 Error details: {str(e)}")
+            st.info("💡 Check the 'Debug Logs' tab for detailed error information.")
             mempool_data = {'error': 'Data unavailable'}
             mempool_stats = {'error': 'Data unavailable'}
             binance_prices = {'BTC': None, 'ETH': None, 'BNB': None, 'POL': None}
