@@ -160,13 +160,15 @@ def main():
             debug_log(f"- Mempool stats: {'✅' if mempool_stats and 'error' not in mempool_stats else '❌'}", "INFO", "data_availability")
             debug_log(f"- Crypto prices: {'✅' if crypto_prices else '❌'}", "INFO", "data_availability")
             debug_log(f"- Binance prices: {'✅' if binance_prices else '❌'}", "INFO", "data_availability")
-            debug_log(f"- Bitcoin OHLC: {'✅' if btc_data is not None and not btc_data.empty else '❌'}", "INFO", "data_availability")
+            
+            # Check Bitcoin OHLC data validity
+            btc_data_valid = btc_data is not None and not btc_data.empty
+            debug_log(f"- Bitcoin OHLC: {'✅' if btc_data_valid else '❌'}", "INFO", "data_availability")
             
             # Data loading success display
             if (mempool_data and 'error' not in mempool_data and 
                 mempool_stats and 'error' not in mempool_stats and 
-                crypto_prices and binance_prices and 
-                btc_data is not None and not btc_data.empty):
+                crypto_prices and binance_prices and btc_data_valid):
                 st.success(f"✅ All cryptocurrency data loaded successfully! ({total_time}ms)")
                 # Success is logged but not displayed to user (already in debug logs)
                 pass
@@ -190,7 +192,7 @@ def main():
                 else:
                     failed_services.append("Binance")
                 
-                if btc_data is not None and not btc_data.empty:
+                if btc_data_valid:
                     loaded_services.append("Bitcoin OHLC")
                 else:
                     failed_services.append("Bitcoin OHLC")
