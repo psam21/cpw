@@ -1,0 +1,2718 @@
+{
+  "export_timestamp": "2025-07-19T03:43:10.749823",
+  "total_logs": 232,
+  "system_info": {
+    "platform": "Linux",
+    "python_version": "3.13.5",
+    "memory_usage": 22.7
+  },
+  "logs": [
+    {
+      "timestamp": "03:41:27.840",
+      "timestamp_full": "2025-07-19T03:41:27.840820",
+      "level": "SYSTEM",
+      "message": "\ud83d\ude80 Application startup initiated",
+      "context": "app_lifecycle",
+      "session_id": 136090562751728,
+      "log_sequence": 1,
+      "system_info": {
+        "platform": "Linux",
+        "python_version": "3.13.5",
+        "memory_usage_mb": 192.45703125,
+        "cpu_percent": 0.0
+      }
+    },
+    {
+      "timestamp": "03:41:27.841",
+      "timestamp_full": "2025-07-19T03:41:27.841577",
+      "level": "INFO",
+      "message": "\ud83d\udcf1 Page config set: Bitcoin Crypto Dashboard",
+      "context": "app_config",
+      "session_id": 136090562751728,
+      "log_sequence": 2
+    },
+    {
+      "timestamp": "03:41:27.841",
+      "timestamp_full": "2025-07-19T03:41:27.841659",
+      "level": "INFO",
+      "message": "\ud83d\udd27 Session state initialized",
+      "context": "session_management",
+      "session_id": 136090562751728,
+      "log_sequence": 3
+    },
+    {
+      "timestamp": "03:41:27.843",
+      "timestamp_full": "2025-07-19T03:41:27.843504",
+      "level": "SYSTEM",
+      "message": "Starting comprehensive data loading process...",
+      "context": "data_loading_start",
+      "session_id": 136090562751728,
+      "log_sequence": 4,
+      "system_info": {
+        "platform": "Linux",
+        "python_version": "3.13.5",
+        "memory_usage_mb": 192.45703125,
+        "cpu_percent": 100.0
+      }
+    },
+    {
+      "timestamp": "03:41:27.843",
+      "timestamp_full": "2025-07-19T03:41:27.843807",
+      "level": "INFO",
+      "message": "Clearing price caches...",
+      "context": "cache_management",
+      "session_id": 136090562751728,
+      "log_sequence": 5
+    },
+    {
+      "timestamp": "03:41:27.844",
+      "timestamp_full": "2025-07-19T03:41:27.844108",
+      "level": "SUCCESS",
+      "message": "Caches cleared successfully",
+      "context": "cache_management",
+      "session_id": 136090562751728,
+      "log_sequence": 6
+    },
+    {
+      "timestamp": "03:41:27.844",
+      "timestamp_full": "2025-07-19T03:41:27.844151",
+      "level": "INFO",
+      "message": "Loading mempool data...",
+      "context": "mempool_loading",
+      "session_id": 136090562751728,
+      "log_sequence": 7
+    },
+    {
+      "timestamp": "03:41:27.844",
+      "timestamp_full": "2025-07-19T03:41:27.844898",
+      "level": "DATA",
+      "message": "\u2699\ufe0f DATA PROCESSING: Mempool Info",
+      "context": "processing_mempool_info",
+      "session_id": 136090562751728,
+      "log_sequence": 8,
+      "data": {
+        "operation": "Mempool Info",
+        "input_size": 11,
+        "output_size": 17493,
+        "processing_time_ms": 0,
+        "timestamp_iso": "2025-07-19T03:41:27.844861"
+      }
+    },
+    {
+      "timestamp": "03:41:27.844",
+      "timestamp_full": "2025-07-19T03:41:27.844949",
+      "level": "SUCCESS",
+      "message": "Mempool data loaded in 0ms",
+      "context": "mempool_loading",
+      "session_id": 136090562751728,
+      "log_sequence": 9
+    },
+    {
+      "timestamp": "03:41:27.844",
+      "timestamp_full": "2025-07-19T03:41:27.844987",
+      "level": "INFO",
+      "message": "Loading mempool stats...",
+      "context": "stats_loading",
+      "session_id": 136090562751728,
+      "log_sequence": 10
+    },
+    {
+      "timestamp": "03:41:27.846",
+      "timestamp_full": "2025-07-19T03:41:27.846723",
+      "level": "DATA",
+      "message": "\u2699\ufe0f DATA PROCESSING: Mempool Stats",
+      "context": "processing_mempool_stats",
+      "session_id": 136090562751728,
+      "log_sequence": 11,
+      "data": {
+        "operation": "Mempool Stats",
+        "input_size": 11,
+        "output_size": 45607,
+        "processing_time_ms": 0,
+        "timestamp_iso": "2025-07-19T03:41:27.846684"
+      }
+    },
+    {
+      "timestamp": "03:41:27.846",
+      "timestamp_full": "2025-07-19T03:41:27.846767",
+      "level": "SUCCESS",
+      "message": "Mempool stats loaded in 0ms",
+      "context": "stats_loading",
+      "session_id": 136090562751728,
+      "log_sequence": 12
+    },
+    {
+      "timestamp": "03:41:27.846",
+      "timestamp_full": "2025-07-19T03:41:27.846796",
+      "level": "INFO",
+      "message": "Loading cryptocurrency prices...",
+      "context": "prices_loading",
+      "session_id": 136090562751728,
+      "log_sequence": 13
+    },
+    {
+      "timestamp": "03:41:27.847",
+      "timestamp_full": "2025-07-19T03:41:27.847521",
+      "level": "INFO",
+      "message": "Starting multi-exchange price fetch...",
+      "context": "price_fetch_start",
+      "session_id": 136090562751728,
+      "log_sequence": 14
+    },
+    {
+      "timestamp": "03:41:27.847",
+      "timestamp_full": "2025-07-19T03:41:27.847565",
+      "level": "SUCCESS",
+      "message": "Successfully imported multi_exchange module",
+      "context": "module_import",
+      "session_id": 136090562751728,
+      "log_sequence": 15
+    },
+    {
+      "timestamp": "03:41:27.847",
+      "timestamp_full": "2025-07-19T03:41:27.847608",
+      "level": "SUCCESS",
+      "message": "\ud83c\udf10 API Multi-Exchange SUCCESS: get_multi_exchange_prices() (Nonems)",
+      "context": "api_multi-exchange",
+      "session_id": 136090562751728,
+      "log_sequence": 16,
+      "data": {
+        "api_name": "Multi-Exchange",
+        "endpoint": "get_multi_exchange_prices()",
+        "status": "STARTING",
+        "response_time_ms": null,
+        "timestamp_iso": "2025-07-19T03:41:27.847586"
+      }
+    },
+    {
+      "timestamp": "03:41:29.253",
+      "timestamp_full": "2025-07-19T03:41:29.253515",
+      "level": "DATA",
+      "message": "\u2699\ufe0f DATA PROCESSING: Multi-exchange price aggregation",
+      "context": "processing_multi-exchange_price_aggregation",
+      "session_id": 136090562751728,
+      "log_sequence": 17,
+      "data": {
+        "operation": "Multi-exchange price aggregation",
+        "input_size": 33,
+        "output_size": 36,
+        "processing_time_ms": 1405.96,
+        "timestamp_iso": "2025-07-19T03:41:29.253465"
+      }
+    },
+    {
+      "timestamp": "03:41:29.253",
+      "timestamp_full": "2025-07-19T03:41:29.253550",
+      "level": "INFO",
+      "message": "Multi-exchange result received:",
+      "context": "price_fetch_result",
+      "session_id": 136090562751728,
+      "log_sequence": 18
+    },
+    {
+      "timestamp": "03:41:29.253",
+      "timestamp_full": "2025-07-19T03:41:29.253569",
+      "level": "DATA",
+      "message": "- Success count: 4",
+      "context": "success_metrics",
+      "session_id": 136090562751728,
+      "log_sequence": 19
+    },
+    {
+      "timestamp": "03:41:29.253",
+      "timestamp_full": "2025-07-19T03:41:29.253587",
+      "level": "DATA",
+      "message": "- Total count: 4",
+      "context": "total_metrics",
+      "session_id": 136090562751728,
+      "log_sequence": 20
+    },
+    {
+      "timestamp": "03:41:29.253",
+      "timestamp_full": "2025-07-19T03:41:29.253605",
+      "level": "DATA",
+      "message": "- Sources used: ['KuCoin', 'Coinbase']",
+      "context": "source_metrics",
+      "session_id": 136090562751728,
+      "log_sequence": 21
+    },
+    {
+      "timestamp": "03:41:29.253",
+      "timestamp_full": "2025-07-19T03:41:29.253622",
+      "level": "DATA",
+      "message": "- Errors count: 0",
+      "context": "error_metrics",
+      "session_id": 136090562751728,
+      "log_sequence": 22
+    },
+    {
+      "timestamp": "03:41:29.253",
+      "timestamp_full": "2025-07-19T03:41:29.253639",
+      "level": "DATA",
+      "message": "- Prices keys: ['BTC', 'ETH', 'BNB', 'POL']",
+      "context": "price_keys",
+      "session_id": 136090562751728,
+      "log_sequence": 23
+    },
+    {
+      "timestamp": "03:41:29.253",
+      "timestamp_full": "2025-07-19T03:41:29.253659",
+      "level": "DATA",
+      "message": "- BTC: 118372.6 (type: float, status: VALID)",
+      "context": "price_btc",
+      "session_id": 136090562751728,
+      "log_sequence": 24
+    },
+    {
+      "timestamp": "03:41:29.253",
+      "timestamp_full": "2025-07-19T03:41:29.253677",
+      "level": "DATA",
+      "message": "- ETH: 3595.77 (type: float, status: VALID)",
+      "context": "price_eth",
+      "session_id": 136090562751728,
+      "log_sequence": 25
+    },
+    {
+      "timestamp": "03:41:29.253",
+      "timestamp_full": "2025-07-19T03:41:29.253694",
+      "level": "DATA",
+      "message": "- BNB: 733.806 (type: float, status: VALID)",
+      "context": "price_bnb",
+      "session_id": 136090562751728,
+      "log_sequence": 26
+    },
+    {
+      "timestamp": "03:41:29.253",
+      "timestamp_full": "2025-07-19T03:41:29.253711",
+      "level": "DATA",
+      "message": "- POL: 0.2384 (type: float, status: VALID)",
+      "context": "price_pol",
+      "session_id": 136090562751728,
+      "log_sequence": 27
+    },
+    {
+      "timestamp": "03:41:29.253",
+      "timestamp_full": "2025-07-19T03:41:29.253727",
+      "level": "SUCCESS",
+      "message": "\ud83d\udce1 Data sources: KuCoin, Coinbase",
+      "context": "source_summary",
+      "session_id": 136090562751728,
+      "log_sequence": 28
+    },
+    {
+      "timestamp": "03:41:29.253",
+      "timestamp_full": "2025-07-19T03:41:29.253752",
+      "level": "SUCCESS",
+      "message": "\ud83c\udf10 API Multi-Exchange SUCCESS: get_multi_exchange_prices() (1405.96ms)",
+      "context": "api_multi-exchange",
+      "session_id": 136090562751728,
+      "log_sequence": 29,
+      "data": {
+        "api_name": "Multi-Exchange",
+        "endpoint": "get_multi_exchange_prices()",
+        "status": "SUCCESS",
+        "response_time_ms": 1405.96,
+        "timestamp_iso": "2025-07-19T03:41:29.253740",
+        "response_preview": "Got 4 prices from 2 sources"
+      }
+    },
+    {
+      "timestamp": "03:41:29.254",
+      "timestamp_full": "2025-07-19T03:41:29.254387",
+      "level": "DATA",
+      "message": "\u2699\ufe0f DATA PROCESSING: Crypto Prices",
+      "context": "processing_crypto_prices",
+      "session_id": 136090562751728,
+      "log_sequence": 30,
+      "data": {
+        "operation": "Crypto Prices",
+        "input_size": 11,
+        "output_size": 220,
+        "processing_time_ms": 1407,
+        "timestamp_iso": "2025-07-19T03:41:29.254357"
+      }
+    },
+    {
+      "timestamp": "03:41:29.254",
+      "timestamp_full": "2025-07-19T03:41:29.254419",
+      "level": "SUCCESS",
+      "message": "Crypto prices loaded in 1407ms",
+      "context": "prices_loading",
+      "session_id": 136090562751728,
+      "log_sequence": 31
+    },
+    {
+      "timestamp": "03:41:29.254",
+      "timestamp_full": "2025-07-19T03:41:29.254438",
+      "level": "INFO",
+      "message": "Loading Binance prices...",
+      "context": "binance_loading",
+      "session_id": 136090562751728,
+      "log_sequence": 32
+    },
+    {
+      "timestamp": "03:41:29.255",
+      "timestamp_full": "2025-07-19T03:41:29.255352",
+      "level": "DATA",
+      "message": "\u2699\ufe0f DATA PROCESSING: Binance Prices",
+      "context": "processing_binance_prices",
+      "session_id": 136090562751728,
+      "log_sequence": 33,
+      "data": {
+        "operation": "Binance Prices",
+        "input_size": 11,
+        "output_size": 220,
+        "processing_time_ms": 0,
+        "timestamp_iso": "2025-07-19T03:41:29.255326"
+      }
+    },
+    {
+      "timestamp": "03:41:29.255",
+      "timestamp_full": "2025-07-19T03:41:29.255424",
+      "level": "SUCCESS",
+      "message": "Binance prices loaded in 0ms",
+      "context": "binance_loading",
+      "session_id": 136090562751728,
+      "log_sequence": 34
+    },
+    {
+      "timestamp": "03:41:29.255",
+      "timestamp_full": "2025-07-19T03:41:29.255446",
+      "level": "INFO",
+      "message": "Loading Bitcoin OHLC data...",
+      "context": "ohlc_loading",
+      "session_id": 136090562751728,
+      "log_sequence": 35
+    },
+    {
+      "timestamp": "03:41:29.255",
+      "timestamp_full": "2025-07-19T03:41:29.255846",
+      "level": "ERROR",
+      "message": "\u274c Critical error during data loading: The truth value of a DataFrame is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().",
+      "context": "data_loading_error",
+      "session_id": 136090562751728,
+      "log_sequence": 36,
+      "system_info": {
+        "platform": "Linux",
+        "python_version": "3.13.5",
+        "memory_usage_mb": 192.45703125,
+        "cpu_percent": 70.0
+      },
+      "stack_trace": [
+        "  File \"/usr/local/lib/python3.13/threading.py\", line 1014, in _bootstrap\n    self._bootstrap_inner()\n",
+        "  File \"/usr/local/lib/python3.13/threading.py\", line 1043, in _bootstrap_inner\n    self.run()\n",
+        "  File \"/usr/local/lib/python3.13/threading.py\", line 994, in run\n    self._target(*self._args, **self._kwargs)\n",
+        "  File \"/home/adminuser/venv/lib/python3.13/site-packages/streamlit/runtime/scriptrunner/script_runner.py\", line 378, in _run_script_thread\n    self._run_script(request.rerun_data)\n",
+        "  File \"/home/adminuser/venv/lib/python3.13/site-packages/streamlit/runtime/scriptrunner/script_runner.py\", line 685, in _run_script\n    ) = exec_func_with_error_handling(code_to_exec, ctx)\n",
+        "  File \"/home/adminuser/venv/lib/python3.13/site-packages/streamlit/runtime/scriptrunner/exec_code.py\", line 128, in exec_func_with_error_handling\n    result = func()\n",
+        "  File \"/home/adminuser/venv/lib/python3.13/site-packages/streamlit/runtime/scriptrunner/script_runner.py\", line 669, in code_to_exec\n    exec(code, module.__dict__)  # noqa: S102\n",
+        "  File \"/mount/src/cpw/app.py\", line 247, in <module>\n    main()\n",
+        "  File \"/mount/src/cpw/app.py\", line 205, in main\n    debug_log(f\"\u274c Critical error during data loading: {str(e)}\", \"ERROR\", \"data_loading_error\")\n",
+        "  File \"/mount/src/cpw/utils/system_logger.py\", line 72, in debug_log\n    log_entry['stack_trace'] = traceback.format_stack()\n"
+      ]
+    },
+    {
+      "timestamp": "03:41:29.259",
+      "timestamp_full": "2025-07-19T03:41:29.259451",
+      "level": "INFO",
+      "message": "\ud83d\udc64 USER ACTION: Navigation to 'Why Bitcoin?' tab",
+      "context": "user_interaction",
+      "session_id": 136090562751728,
+      "log_sequence": 37,
+      "data": {
+        "action": "Navigation to 'Why Bitcoin?' tab",
+        "details": {
+          "tab_name": "Why Bitcoin?",
+          "available_tabs": [
+            "Why Bitcoin?",
+            "Bitcoin OHLC",
+            "Mempool Data",
+            "Portfolio Value",
+            "Bitcoin Metrics",
+            "Debug Logs"
+          ]
+        },
+        "timestamp_iso": "2025-07-19T03:41:29.259420"
+      }
+    },
+    {
+      "timestamp": "03:41:29.259",
+      "timestamp_full": "2025-07-19T03:41:29.259503",
+      "level": "INFO",
+      "message": "\ud83d\udc64 USER ACTION: Viewing Why Bitcoin page",
+      "context": "user_interaction",
+      "session_id": 136090562751728,
+      "log_sequence": 38,
+      "data": {
+        "action": "Viewing Why Bitcoin page",
+        "details": null,
+        "timestamp_iso": "2025-07-19T03:41:29.259486"
+      }
+    },
+    {
+      "timestamp": "03:42:14.226",
+      "timestamp_full": "2025-07-19T03:42:14.226949",
+      "level": "SYSTEM",
+      "message": "\ud83d\ude80 Application startup initiated",
+      "context": "app_lifecycle",
+      "session_id": 136090562751728,
+      "log_sequence": 39,
+      "system_info": {
+        "platform": "Linux",
+        "python_version": "3.13.5",
+        "memory_usage_mb": 192.48046875,
+        "cpu_percent": 0.0
+      }
+    },
+    {
+      "timestamp": "03:42:14.227",
+      "timestamp_full": "2025-07-19T03:42:14.227598",
+      "level": "INFO",
+      "message": "\ud83d\udcf1 Page config set: Bitcoin Crypto Dashboard",
+      "context": "app_config",
+      "session_id": 136090562751728,
+      "log_sequence": 40
+    },
+    {
+      "timestamp": "03:42:14.227",
+      "timestamp_full": "2025-07-19T03:42:14.227625",
+      "level": "INFO",
+      "message": "\ud83d\udd27 Session state initialized",
+      "context": "session_management",
+      "session_id": 136090562751728,
+      "log_sequence": 41
+    },
+    {
+      "timestamp": "03:42:14.228",
+      "timestamp_full": "2025-07-19T03:42:14.228385",
+      "level": "SYSTEM",
+      "message": "Starting comprehensive data loading process...",
+      "context": "data_loading_start",
+      "session_id": 136090562751728,
+      "log_sequence": 42,
+      "system_info": {
+        "platform": "Linux",
+        "python_version": "3.13.5",
+        "memory_usage_mb": 192.48046875,
+        "cpu_percent": 100.0
+      }
+    },
+    {
+      "timestamp": "03:42:14.228",
+      "timestamp_full": "2025-07-19T03:42:14.228775",
+      "level": "INFO",
+      "message": "Clearing price caches...",
+      "context": "cache_management",
+      "session_id": 136090562751728,
+      "log_sequence": 43
+    },
+    {
+      "timestamp": "03:42:14.228",
+      "timestamp_full": "2025-07-19T03:42:14.228987",
+      "level": "SUCCESS",
+      "message": "Caches cleared successfully",
+      "context": "cache_management",
+      "session_id": 136090562751728,
+      "log_sequence": 44
+    },
+    {
+      "timestamp": "03:42:14.229",
+      "timestamp_full": "2025-07-19T03:42:14.229014",
+      "level": "INFO",
+      "message": "Loading mempool data...",
+      "context": "mempool_loading",
+      "session_id": 136090562751728,
+      "log_sequence": 45
+    },
+    {
+      "timestamp": "03:42:14.229",
+      "timestamp_full": "2025-07-19T03:42:14.229597",
+      "level": "DATA",
+      "message": "\u2699\ufe0f DATA PROCESSING: Mempool Info",
+      "context": "processing_mempool_info",
+      "session_id": 136090562751728,
+      "log_sequence": 46,
+      "data": {
+        "operation": "Mempool Info",
+        "input_size": 11,
+        "output_size": 17493,
+        "processing_time_ms": 0,
+        "timestamp_iso": "2025-07-19T03:42:14.229565"
+      }
+    },
+    {
+      "timestamp": "03:42:14.229",
+      "timestamp_full": "2025-07-19T03:42:14.229633",
+      "level": "SUCCESS",
+      "message": "Mempool data loaded in 0ms",
+      "context": "mempool_loading",
+      "session_id": 136090562751728,
+      "log_sequence": 47
+    },
+    {
+      "timestamp": "03:42:14.229",
+      "timestamp_full": "2025-07-19T03:42:14.229654",
+      "level": "INFO",
+      "message": "Loading mempool stats...",
+      "context": "stats_loading",
+      "session_id": 136090562751728,
+      "log_sequence": 48
+    },
+    {
+      "timestamp": "03:42:14.230",
+      "timestamp_full": "2025-07-19T03:42:14.230728",
+      "level": "DATA",
+      "message": "\u2699\ufe0f DATA PROCESSING: Mempool Stats",
+      "context": "processing_mempool_stats",
+      "session_id": 136090562751728,
+      "log_sequence": 49,
+      "data": {
+        "operation": "Mempool Stats",
+        "input_size": 11,
+        "output_size": 45607,
+        "processing_time_ms": 0,
+        "timestamp_iso": "2025-07-19T03:42:14.230703"
+      }
+    },
+    {
+      "timestamp": "03:42:14.230",
+      "timestamp_full": "2025-07-19T03:42:14.230757",
+      "level": "SUCCESS",
+      "message": "Mempool stats loaded in 0ms",
+      "context": "stats_loading",
+      "session_id": 136090562751728,
+      "log_sequence": 50
+    },
+    {
+      "timestamp": "03:42:14.230",
+      "timestamp_full": "2025-07-19T03:42:14.230777",
+      "level": "INFO",
+      "message": "Loading cryptocurrency prices...",
+      "context": "prices_loading",
+      "session_id": 136090562751728,
+      "log_sequence": 51
+    },
+    {
+      "timestamp": "03:42:14.231",
+      "timestamp_full": "2025-07-19T03:42:14.231350",
+      "level": "INFO",
+      "message": "Starting multi-exchange price fetch...",
+      "context": "price_fetch_start",
+      "session_id": 136090562751728,
+      "log_sequence": 52
+    },
+    {
+      "timestamp": "03:42:14.231",
+      "timestamp_full": "2025-07-19T03:42:14.231398",
+      "level": "SUCCESS",
+      "message": "Successfully imported multi_exchange module",
+      "context": "module_import",
+      "session_id": 136090562751728,
+      "log_sequence": 53
+    },
+    {
+      "timestamp": "03:42:14.231",
+      "timestamp_full": "2025-07-19T03:42:14.231438",
+      "level": "SUCCESS",
+      "message": "\ud83c\udf10 API Multi-Exchange SUCCESS: get_multi_exchange_prices() (Nonems)",
+      "context": "api_multi-exchange",
+      "session_id": 136090562751728,
+      "log_sequence": 54,
+      "data": {
+        "api_name": "Multi-Exchange",
+        "endpoint": "get_multi_exchange_prices()",
+        "status": "STARTING",
+        "response_time_ms": null,
+        "timestamp_iso": "2025-07-19T03:42:14.231415"
+      }
+    },
+    {
+      "timestamp": "03:42:15.682",
+      "timestamp_full": "2025-07-19T03:42:15.682617",
+      "level": "DATA",
+      "message": "\u2699\ufe0f DATA PROCESSING: Multi-exchange price aggregation",
+      "context": "processing_multi-exchange_price_aggregation",
+      "session_id": 136090562751728,
+      "log_sequence": 55,
+      "data": {
+        "operation": "Multi-exchange price aggregation",
+        "input_size": 33,
+        "output_size": 36,
+        "processing_time_ms": 1451.23,
+        "timestamp_iso": "2025-07-19T03:42:15.682563"
+      }
+    },
+    {
+      "timestamp": "03:42:15.682",
+      "timestamp_full": "2025-07-19T03:42:15.682677",
+      "level": "INFO",
+      "message": "Multi-exchange result received:",
+      "context": "price_fetch_result",
+      "session_id": 136090562751728,
+      "log_sequence": 56
+    },
+    {
+      "timestamp": "03:42:15.682",
+      "timestamp_full": "2025-07-19T03:42:15.682703",
+      "level": "DATA",
+      "message": "- Success count: 4",
+      "context": "success_metrics",
+      "session_id": 136090562751728,
+      "log_sequence": 57
+    },
+    {
+      "timestamp": "03:42:15.682",
+      "timestamp_full": "2025-07-19T03:42:15.682723",
+      "level": "DATA",
+      "message": "- Total count: 4",
+      "context": "total_metrics",
+      "session_id": 136090562751728,
+      "log_sequence": 58
+    },
+    {
+      "timestamp": "03:42:15.682",
+      "timestamp_full": "2025-07-19T03:42:15.682743",
+      "level": "DATA",
+      "message": "- Sources used: ['KuCoin', 'Coinbase']",
+      "context": "source_metrics",
+      "session_id": 136090562751728,
+      "log_sequence": 59
+    },
+    {
+      "timestamp": "03:42:15.682",
+      "timestamp_full": "2025-07-19T03:42:15.682762",
+      "level": "DATA",
+      "message": "- Errors count: 0",
+      "context": "error_metrics",
+      "session_id": 136090562751728,
+      "log_sequence": 60
+    },
+    {
+      "timestamp": "03:42:15.682",
+      "timestamp_full": "2025-07-19T03:42:15.682782",
+      "level": "DATA",
+      "message": "- Prices keys: ['BTC', 'ETH', 'BNB', 'POL']",
+      "context": "price_keys",
+      "session_id": 136090562751728,
+      "log_sequence": 61
+    },
+    {
+      "timestamp": "03:42:15.682",
+      "timestamp_full": "2025-07-19T03:42:15.682805",
+      "level": "DATA",
+      "message": "- BTC: 118350.9 (type: float, status: VALID)",
+      "context": "price_btc",
+      "session_id": 136090562751728,
+      "log_sequence": 62
+    },
+    {
+      "timestamp": "03:42:15.682",
+      "timestamp_full": "2025-07-19T03:42:15.682825",
+      "level": "DATA",
+      "message": "- ETH: 3594.84 (type: float, status: VALID)",
+      "context": "price_eth",
+      "session_id": 136090562751728,
+      "log_sequence": 63
+    },
+    {
+      "timestamp": "03:42:15.682",
+      "timestamp_full": "2025-07-19T03:42:15.682844",
+      "level": "DATA",
+      "message": "- BNB: 733.787 (type: float, status: VALID)",
+      "context": "price_bnb",
+      "session_id": 136090562751728,
+      "log_sequence": 64
+    },
+    {
+      "timestamp": "03:42:15.682",
+      "timestamp_full": "2025-07-19T03:42:15.682906",
+      "level": "DATA",
+      "message": "- POL: 0.2388 (type: float, status: VALID)",
+      "context": "price_pol",
+      "session_id": 136090562751728,
+      "log_sequence": 65
+    },
+    {
+      "timestamp": "03:42:15.682",
+      "timestamp_full": "2025-07-19T03:42:15.682928",
+      "level": "SUCCESS",
+      "message": "\ud83d\udce1 Data sources: KuCoin, Coinbase",
+      "context": "source_summary",
+      "session_id": 136090562751728,
+      "log_sequence": 66
+    },
+    {
+      "timestamp": "03:42:15.682",
+      "timestamp_full": "2025-07-19T03:42:15.682965",
+      "level": "SUCCESS",
+      "message": "\ud83c\udf10 API Multi-Exchange SUCCESS: get_multi_exchange_prices() (1451.23ms)",
+      "context": "api_multi-exchange",
+      "session_id": 136090562751728,
+      "log_sequence": 67,
+      "data": {
+        "api_name": "Multi-Exchange",
+        "endpoint": "get_multi_exchange_prices()",
+        "status": "SUCCESS",
+        "response_time_ms": 1451.23,
+        "timestamp_iso": "2025-07-19T03:42:15.682944",
+        "response_preview": "Got 4 prices from 2 sources"
+      }
+    },
+    {
+      "timestamp": "03:42:15.683",
+      "timestamp_full": "2025-07-19T03:42:15.683653",
+      "level": "DATA",
+      "message": "\u2699\ufe0f DATA PROCESSING: Crypto Prices",
+      "context": "processing_crypto_prices",
+      "session_id": 136090562751728,
+      "log_sequence": 68,
+      "data": {
+        "operation": "Crypto Prices",
+        "input_size": 11,
+        "output_size": 220,
+        "processing_time_ms": 1452,
+        "timestamp_iso": "2025-07-19T03:42:15.683614"
+      }
+    },
+    {
+      "timestamp": "03:42:15.683",
+      "timestamp_full": "2025-07-19T03:42:15.683711",
+      "level": "SUCCESS",
+      "message": "Crypto prices loaded in 1452ms",
+      "context": "prices_loading",
+      "session_id": 136090562751728,
+      "log_sequence": 69
+    },
+    {
+      "timestamp": "03:42:15.683",
+      "timestamp_full": "2025-07-19T03:42:15.683752",
+      "level": "INFO",
+      "message": "Loading Binance prices...",
+      "context": "binance_loading",
+      "session_id": 136090562751728,
+      "log_sequence": 70
+    },
+    {
+      "timestamp": "03:42:15.684",
+      "timestamp_full": "2025-07-19T03:42:15.684928",
+      "level": "DATA",
+      "message": "\u2699\ufe0f DATA PROCESSING: Binance Prices",
+      "context": "processing_binance_prices",
+      "session_id": 136090562751728,
+      "log_sequence": 71,
+      "data": {
+        "operation": "Binance Prices",
+        "input_size": 11,
+        "output_size": 220,
+        "processing_time_ms": 1,
+        "timestamp_iso": "2025-07-19T03:42:15.684901"
+      }
+    },
+    {
+      "timestamp": "03:42:15.684",
+      "timestamp_full": "2025-07-19T03:42:15.684970",
+      "level": "SUCCESS",
+      "message": "Binance prices loaded in 1ms",
+      "context": "binance_loading",
+      "session_id": 136090562751728,
+      "log_sequence": 72
+    },
+    {
+      "timestamp": "03:42:15.684",
+      "timestamp_full": "2025-07-19T03:42:15.684992",
+      "level": "INFO",
+      "message": "Loading Bitcoin OHLC data...",
+      "context": "ohlc_loading",
+      "session_id": 136090562751728,
+      "log_sequence": 73
+    },
+    {
+      "timestamp": "03:42:15.685",
+      "timestamp_full": "2025-07-19T03:42:15.685420",
+      "level": "ERROR",
+      "message": "\u274c Critical error during data loading: The truth value of a DataFrame is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().",
+      "context": "data_loading_error",
+      "session_id": 136090562751728,
+      "log_sequence": 74,
+      "system_info": {
+        "platform": "Linux",
+        "python_version": "3.13.5",
+        "memory_usage_mb": 192.48046875,
+        "cpu_percent": 36.0
+      },
+      "stack_trace": [
+        "  File \"/usr/local/lib/python3.13/threading.py\", line 1014, in _bootstrap\n    self._bootstrap_inner()\n",
+        "  File \"/usr/local/lib/python3.13/threading.py\", line 1043, in _bootstrap_inner\n    self.run()\n",
+        "  File \"/usr/local/lib/python3.13/threading.py\", line 994, in run\n    self._target(*self._args, **self._kwargs)\n",
+        "  File \"/home/adminuser/venv/lib/python3.13/site-packages/streamlit/runtime/scriptrunner/script_runner.py\", line 378, in _run_script_thread\n    self._run_script(request.rerun_data)\n",
+        "  File \"/home/adminuser/venv/lib/python3.13/site-packages/streamlit/runtime/scriptrunner/script_runner.py\", line 685, in _run_script\n    ) = exec_func_with_error_handling(code_to_exec, ctx)\n",
+        "  File \"/home/adminuser/venv/lib/python3.13/site-packages/streamlit/runtime/scriptrunner/exec_code.py\", line 128, in exec_func_with_error_handling\n    result = func()\n",
+        "  File \"/home/adminuser/venv/lib/python3.13/site-packages/streamlit/runtime/scriptrunner/script_runner.py\", line 669, in code_to_exec\n    exec(code, module.__dict__)  # noqa: S102\n",
+        "  File \"/mount/src/cpw/app.py\", line 247, in <module>\n    main()\n",
+        "  File \"/mount/src/cpw/app.py\", line 205, in main\n    debug_log(f\"\u274c Critical error during data loading: {str(e)}\", \"ERROR\", \"data_loading_error\")\n",
+        "  File \"/mount/src/cpw/utils/system_logger.py\", line 72, in debug_log\n    log_entry['stack_trace'] = traceback.format_stack()\n"
+      ]
+    },
+    {
+      "timestamp": "03:42:15.687",
+      "timestamp_full": "2025-07-19T03:42:15.687842",
+      "level": "INFO",
+      "message": "\ud83d\udc64 USER ACTION: Navigation to 'Bitcoin OHLC' tab",
+      "context": "user_interaction",
+      "session_id": 136090562751728,
+      "log_sequence": 75,
+      "data": {
+        "action": "Navigation to 'Bitcoin OHLC' tab",
+        "details": {
+          "tab_name": "Bitcoin OHLC",
+          "available_tabs": [
+            "Why Bitcoin?",
+            "Bitcoin OHLC",
+            "Mempool Data",
+            "Portfolio Value",
+            "Bitcoin Metrics",
+            "Debug Logs"
+          ]
+        },
+        "timestamp_iso": "2025-07-19T03:42:15.687815"
+      }
+    },
+    {
+      "timestamp": "03:42:15.687",
+      "timestamp_full": "2025-07-19T03:42:15.687882",
+      "level": "INFO",
+      "message": "\ud83d\udc64 USER ACTION: Viewing Bitcoin OHLC page",
+      "context": "user_interaction",
+      "session_id": 136090562751728,
+      "log_sequence": 76,
+      "data": {
+        "action": "Viewing Bitcoin OHLC page",
+        "details": null,
+        "timestamp_iso": "2025-07-19T03:42:15.687869"
+      }
+    },
+    {
+      "timestamp": "03:42:15.691",
+      "timestamp_full": "2025-07-19T03:42:15.691246",
+      "level": "ERROR",
+      "message": "\u274c Error in OHLC page: debug_log_api_call() missing 1 required positional argument: 'status'",
+      "context": "ohlc_page_error",
+      "session_id": 136090562751728,
+      "log_sequence": 77,
+      "system_info": {
+        "platform": "Linux",
+        "python_version": "3.13.5",
+        "memory_usage_mb": 192.48046875,
+        "cpu_percent": 33.3
+      },
+      "stack_trace": [
+        "  File \"/usr/local/lib/python3.13/threading.py\", line 1014, in _bootstrap\n    self._bootstrap_inner()\n",
+        "  File \"/usr/local/lib/python3.13/threading.py\", line 1043, in _bootstrap_inner\n    self.run()\n",
+        "  File \"/usr/local/lib/python3.13/threading.py\", line 994, in run\n    self._target(*self._args, **self._kwargs)\n",
+        "  File \"/home/adminuser/venv/lib/python3.13/site-packages/streamlit/runtime/scriptrunner/script_runner.py\", line 378, in _run_script_thread\n    self._run_script(request.rerun_data)\n",
+        "  File \"/home/adminuser/venv/lib/python3.13/site-packages/streamlit/runtime/scriptrunner/script_runner.py\", line 685, in _run_script\n    ) = exec_func_with_error_handling(code_to_exec, ctx)\n",
+        "  File \"/home/adminuser/venv/lib/python3.13/site-packages/streamlit/runtime/scriptrunner/exec_code.py\", line 128, in exec_func_with_error_handling\n    result = func()\n",
+        "  File \"/home/adminuser/venv/lib/python3.13/site-packages/streamlit/runtime/scriptrunner/script_runner.py\", line 669, in code_to_exec\n    exec(code, module.__dict__)  # noqa: S102\n",
+        "  File \"/mount/src/cpw/app.py\", line 247, in <module>\n    main()\n",
+        "  File \"/mount/src/cpw/app.py\", line 231, in main\n    render_bitcoin_ohlc_page()\n",
+        "  File \"/mount/src/cpw/pages/bitcoin_technical_analysis.py\", line 91, in render_bitcoin_ohlc_page\n    debug_log(f\"\u274c Error in OHLC page: {str(e)}\", \"ERROR\", \"ohlc_page_error\")\n",
+        "  File \"/mount/src/cpw/utils/system_logger.py\", line 72, in debug_log\n    log_entry['stack_trace'] = traceback.format_stack()\n"
+      ]
+    },
+    {
+      "timestamp": "03:42:51.510",
+      "timestamp_full": "2025-07-19T03:42:51.510967",
+      "level": "SYSTEM",
+      "message": "\ud83d\ude80 Application startup initiated",
+      "context": "app_lifecycle",
+      "session_id": 136090562751728,
+      "log_sequence": 78,
+      "system_info": {
+        "platform": "Linux",
+        "python_version": "3.13.5",
+        "memory_usage_mb": 192.51171875,
+        "cpu_percent": 0.0
+      }
+    },
+    {
+      "timestamp": "03:42:51.512",
+      "timestamp_full": "2025-07-19T03:42:51.512529",
+      "level": "INFO",
+      "message": "\ud83d\udcf1 Page config set: Bitcoin Crypto Dashboard",
+      "context": "app_config",
+      "session_id": 136090562751728,
+      "log_sequence": 79
+    },
+    {
+      "timestamp": "03:42:51.512",
+      "timestamp_full": "2025-07-19T03:42:51.512559",
+      "level": "INFO",
+      "message": "\ud83d\udd27 Session state initialized",
+      "context": "session_management",
+      "session_id": 136090562751728,
+      "log_sequence": 80
+    },
+    {
+      "timestamp": "03:42:51.513",
+      "timestamp_full": "2025-07-19T03:42:51.513593",
+      "level": "SYSTEM",
+      "message": "Starting comprehensive data loading process...",
+      "context": "data_loading_start",
+      "session_id": 136090562751728,
+      "log_sequence": 81,
+      "system_info": {
+        "platform": "Linux",
+        "python_version": "3.13.5",
+        "memory_usage_mb": 192.51171875,
+        "cpu_percent": 33.3
+      }
+    },
+    {
+      "timestamp": "03:42:51.513",
+      "timestamp_full": "2025-07-19T03:42:51.513927",
+      "level": "INFO",
+      "message": "Clearing price caches...",
+      "context": "cache_management",
+      "session_id": 136090562751728,
+      "log_sequence": 82
+    },
+    {
+      "timestamp": "03:42:51.514",
+      "timestamp_full": "2025-07-19T03:42:51.514143",
+      "level": "SUCCESS",
+      "message": "Caches cleared successfully",
+      "context": "cache_management",
+      "session_id": 136090562751728,
+      "log_sequence": 83
+    },
+    {
+      "timestamp": "03:42:51.514",
+      "timestamp_full": "2025-07-19T03:42:51.514169",
+      "level": "INFO",
+      "message": "Loading mempool data...",
+      "context": "mempool_loading",
+      "session_id": 136090562751728,
+      "log_sequence": 84
+    },
+    {
+      "timestamp": "03:42:51.514",
+      "timestamp_full": "2025-07-19T03:42:51.514706",
+      "level": "DATA",
+      "message": "\u2699\ufe0f DATA PROCESSING: Mempool Info",
+      "context": "processing_mempool_info",
+      "session_id": 136090562751728,
+      "log_sequence": 85,
+      "data": {
+        "operation": "Mempool Info",
+        "input_size": 11,
+        "output_size": 17493,
+        "processing_time_ms": 0,
+        "timestamp_iso": "2025-07-19T03:42:51.514678"
+      }
+    },
+    {
+      "timestamp": "03:42:51.514",
+      "timestamp_full": "2025-07-19T03:42:51.514737",
+      "level": "SUCCESS",
+      "message": "Mempool data loaded in 0ms",
+      "context": "mempool_loading",
+      "session_id": 136090562751728,
+      "log_sequence": 86
+    },
+    {
+      "timestamp": "03:42:51.514",
+      "timestamp_full": "2025-07-19T03:42:51.514758",
+      "level": "INFO",
+      "message": "Loading mempool stats...",
+      "context": "stats_loading",
+      "session_id": 136090562751728,
+      "log_sequence": 87
+    },
+    {
+      "timestamp": "03:42:51.515",
+      "timestamp_full": "2025-07-19T03:42:51.515840",
+      "level": "DATA",
+      "message": "\u2699\ufe0f DATA PROCESSING: Mempool Stats",
+      "context": "processing_mempool_stats",
+      "session_id": 136090562751728,
+      "log_sequence": 88,
+      "data": {
+        "operation": "Mempool Stats",
+        "input_size": 11,
+        "output_size": 45607,
+        "processing_time_ms": 0,
+        "timestamp_iso": "2025-07-19T03:42:51.515815"
+      }
+    },
+    {
+      "timestamp": "03:42:51.515",
+      "timestamp_full": "2025-07-19T03:42:51.515873",
+      "level": "SUCCESS",
+      "message": "Mempool stats loaded in 0ms",
+      "context": "stats_loading",
+      "session_id": 136090562751728,
+      "log_sequence": 89
+    },
+    {
+      "timestamp": "03:42:51.515",
+      "timestamp_full": "2025-07-19T03:42:51.515893",
+      "level": "INFO",
+      "message": "Loading cryptocurrency prices...",
+      "context": "prices_loading",
+      "session_id": 136090562751728,
+      "log_sequence": 90
+    },
+    {
+      "timestamp": "03:42:51.516",
+      "timestamp_full": "2025-07-19T03:42:51.516451",
+      "level": "INFO",
+      "message": "Starting multi-exchange price fetch...",
+      "context": "price_fetch_start",
+      "session_id": 136090562751728,
+      "log_sequence": 91
+    },
+    {
+      "timestamp": "03:42:51.516",
+      "timestamp_full": "2025-07-19T03:42:51.516487",
+      "level": "SUCCESS",
+      "message": "Successfully imported multi_exchange module",
+      "context": "module_import",
+      "session_id": 136090562751728,
+      "log_sequence": 92
+    },
+    {
+      "timestamp": "03:42:51.516",
+      "timestamp_full": "2025-07-19T03:42:51.516515",
+      "level": "SUCCESS",
+      "message": "\ud83c\udf10 API Multi-Exchange SUCCESS: get_multi_exchange_prices() (Nonems)",
+      "context": "api_multi-exchange",
+      "session_id": 136090562751728,
+      "log_sequence": 93,
+      "data": {
+        "api_name": "Multi-Exchange",
+        "endpoint": "get_multi_exchange_prices()",
+        "status": "STARTING",
+        "response_time_ms": null,
+        "timestamp_iso": "2025-07-19T03:42:51.516502"
+      }
+    },
+    {
+      "timestamp": "03:42:53.055",
+      "timestamp_full": "2025-07-19T03:42:53.055429",
+      "level": "DATA",
+      "message": "\u2699\ufe0f DATA PROCESSING: Multi-exchange price aggregation",
+      "context": "processing_multi-exchange_price_aggregation",
+      "session_id": 136090562751728,
+      "log_sequence": 94,
+      "data": {
+        "operation": "Multi-exchange price aggregation",
+        "input_size": 33,
+        "output_size": 36,
+        "processing_time_ms": 1538.93,
+        "timestamp_iso": "2025-07-19T03:42:53.055370"
+      }
+    },
+    {
+      "timestamp": "03:42:53.055",
+      "timestamp_full": "2025-07-19T03:42:53.055477",
+      "level": "INFO",
+      "message": "Multi-exchange result received:",
+      "context": "price_fetch_result",
+      "session_id": 136090562751728,
+      "log_sequence": 95
+    },
+    {
+      "timestamp": "03:42:53.055",
+      "timestamp_full": "2025-07-19T03:42:53.055506",
+      "level": "DATA",
+      "message": "- Success count: 4",
+      "context": "success_metrics",
+      "session_id": 136090562751728,
+      "log_sequence": 96
+    },
+    {
+      "timestamp": "03:42:53.055",
+      "timestamp_full": "2025-07-19T03:42:53.055535",
+      "level": "DATA",
+      "message": "- Total count: 4",
+      "context": "total_metrics",
+      "session_id": 136090562751728,
+      "log_sequence": 97
+    },
+    {
+      "timestamp": "03:42:53.055",
+      "timestamp_full": "2025-07-19T03:42:53.055564",
+      "level": "DATA",
+      "message": "- Sources used: ['KuCoin', 'Coinbase']",
+      "context": "source_metrics",
+      "session_id": 136090562751728,
+      "log_sequence": 98
+    },
+    {
+      "timestamp": "03:42:53.055",
+      "timestamp_full": "2025-07-19T03:42:53.055592",
+      "level": "DATA",
+      "message": "- Errors count: 0",
+      "context": "error_metrics",
+      "session_id": 136090562751728,
+      "log_sequence": 99
+    },
+    {
+      "timestamp": "03:42:53.055",
+      "timestamp_full": "2025-07-19T03:42:53.055621",
+      "level": "DATA",
+      "message": "- Prices keys: ['BTC', 'ETH', 'BNB', 'POL']",
+      "context": "price_keys",
+      "session_id": 136090562751728,
+      "log_sequence": 100
+    },
+    {
+      "timestamp": "03:42:53.055",
+      "timestamp_full": "2025-07-19T03:42:53.055653",
+      "level": "DATA",
+      "message": "- BTC: 118348.4 (type: float, status: VALID)",
+      "context": "price_btc",
+      "session_id": 136090562751728,
+      "log_sequence": 101
+    },
+    {
+      "timestamp": "03:42:53.055",
+      "timestamp_full": "2025-07-19T03:42:53.055683",
+      "level": "DATA",
+      "message": "- ETH: 3594.62 (type: float, status: VALID)",
+      "context": "price_eth",
+      "session_id": 136090562751728,
+      "log_sequence": 102
+    },
+    {
+      "timestamp": "03:42:53.055",
+      "timestamp_full": "2025-07-19T03:42:53.055713",
+      "level": "DATA",
+      "message": "- BNB: 733.528 (type: float, status: VALID)",
+      "context": "price_bnb",
+      "session_id": 136090562751728,
+      "log_sequence": 103
+    },
+    {
+      "timestamp": "03:42:53.055",
+      "timestamp_full": "2025-07-19T03:42:53.055741",
+      "level": "DATA",
+      "message": "- POL: 0.2389 (type: float, status: VALID)",
+      "context": "price_pol",
+      "session_id": 136090562751728,
+      "log_sequence": 104
+    },
+    {
+      "timestamp": "03:42:53.055",
+      "timestamp_full": "2025-07-19T03:42:53.055769",
+      "level": "SUCCESS",
+      "message": "\ud83d\udce1 Data sources: KuCoin, Coinbase",
+      "context": "source_summary",
+      "session_id": 136090562751728,
+      "log_sequence": 105
+    },
+    {
+      "timestamp": "03:42:53.055",
+      "timestamp_full": "2025-07-19T03:42:53.055809",
+      "level": "SUCCESS",
+      "message": "\ud83c\udf10 API Multi-Exchange SUCCESS: get_multi_exchange_prices() (1538.93ms)",
+      "context": "api_multi-exchange",
+      "session_id": 136090562751728,
+      "log_sequence": 106,
+      "data": {
+        "api_name": "Multi-Exchange",
+        "endpoint": "get_multi_exchange_prices()",
+        "status": "SUCCESS",
+        "response_time_ms": 1538.93,
+        "timestamp_iso": "2025-07-19T03:42:53.055791",
+        "response_preview": "Got 4 prices from 2 sources"
+      }
+    },
+    {
+      "timestamp": "03:42:53.056",
+      "timestamp_full": "2025-07-19T03:42:53.056470",
+      "level": "DATA",
+      "message": "\u2699\ufe0f DATA PROCESSING: Crypto Prices",
+      "context": "processing_crypto_prices",
+      "session_id": 136090562751728,
+      "log_sequence": 107,
+      "data": {
+        "operation": "Crypto Prices",
+        "input_size": 11,
+        "output_size": 220,
+        "processing_time_ms": 1540,
+        "timestamp_iso": "2025-07-19T03:42:53.056438"
+      }
+    },
+    {
+      "timestamp": "03:42:53.056",
+      "timestamp_full": "2025-07-19T03:42:53.056514",
+      "level": "SUCCESS",
+      "message": "Crypto prices loaded in 1540ms",
+      "context": "prices_loading",
+      "session_id": 136090562751728,
+      "log_sequence": 108
+    },
+    {
+      "timestamp": "03:42:53.056",
+      "timestamp_full": "2025-07-19T03:42:53.056544",
+      "level": "INFO",
+      "message": "Loading Binance prices...",
+      "context": "binance_loading",
+      "session_id": 136090562751728,
+      "log_sequence": 109
+    },
+    {
+      "timestamp": "03:42:53.058",
+      "timestamp_full": "2025-07-19T03:42:53.058140",
+      "level": "DATA",
+      "message": "\u2699\ufe0f DATA PROCESSING: Binance Prices",
+      "context": "processing_binance_prices",
+      "session_id": 136090562751728,
+      "log_sequence": 110,
+      "data": {
+        "operation": "Binance Prices",
+        "input_size": 11,
+        "output_size": 220,
+        "processing_time_ms": 1,
+        "timestamp_iso": "2025-07-19T03:42:53.058101"
+      }
+    },
+    {
+      "timestamp": "03:42:53.058",
+      "timestamp_full": "2025-07-19T03:42:53.058195",
+      "level": "SUCCESS",
+      "message": "Binance prices loaded in 1ms",
+      "context": "binance_loading",
+      "session_id": 136090562751728,
+      "log_sequence": 111
+    },
+    {
+      "timestamp": "03:42:53.058",
+      "timestamp_full": "2025-07-19T03:42:53.058281",
+      "level": "INFO",
+      "message": "Loading Bitcoin OHLC data...",
+      "context": "ohlc_loading",
+      "session_id": 136090562751728,
+      "log_sequence": 112
+    },
+    {
+      "timestamp": "03:42:53.058",
+      "timestamp_full": "2025-07-19T03:42:53.058787",
+      "level": "ERROR",
+      "message": "\u274c Critical error during data loading: The truth value of a DataFrame is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().",
+      "context": "data_loading_error",
+      "session_id": 136090562751728,
+      "log_sequence": 113,
+      "system_info": {
+        "platform": "Linux",
+        "python_version": "3.13.5",
+        "memory_usage_mb": 192.515625,
+        "cpu_percent": 52.3
+      },
+      "stack_trace": [
+        "  File \"/usr/local/lib/python3.13/threading.py\", line 1014, in _bootstrap\n    self._bootstrap_inner()\n",
+        "  File \"/usr/local/lib/python3.13/threading.py\", line 1043, in _bootstrap_inner\n    self.run()\n",
+        "  File \"/usr/local/lib/python3.13/threading.py\", line 994, in run\n    self._target(*self._args, **self._kwargs)\n",
+        "  File \"/home/adminuser/venv/lib/python3.13/site-packages/streamlit/runtime/scriptrunner/script_runner.py\", line 378, in _run_script_thread\n    self._run_script(request.rerun_data)\n",
+        "  File \"/home/adminuser/venv/lib/python3.13/site-packages/streamlit/runtime/scriptrunner/script_runner.py\", line 685, in _run_script\n    ) = exec_func_with_error_handling(code_to_exec, ctx)\n",
+        "  File \"/home/adminuser/venv/lib/python3.13/site-packages/streamlit/runtime/scriptrunner/exec_code.py\", line 128, in exec_func_with_error_handling\n    result = func()\n",
+        "  File \"/home/adminuser/venv/lib/python3.13/site-packages/streamlit/runtime/scriptrunner/script_runner.py\", line 669, in code_to_exec\n    exec(code, module.__dict__)  # noqa: S102\n",
+        "  File \"/mount/src/cpw/app.py\", line 247, in <module>\n    main()\n",
+        "  File \"/mount/src/cpw/app.py\", line 205, in main\n    debug_log(f\"\u274c Critical error during data loading: {str(e)}\", \"ERROR\", \"data_loading_error\")\n",
+        "  File \"/mount/src/cpw/utils/system_logger.py\", line 72, in debug_log\n    log_entry['stack_trace'] = traceback.format_stack()\n"
+      ]
+    },
+    {
+      "timestamp": "03:42:53.062",
+      "timestamp_full": "2025-07-19T03:42:53.062021",
+      "level": "INFO",
+      "message": "\ud83d\udc64 USER ACTION: Navigation to 'Mempool Data' tab",
+      "context": "user_interaction",
+      "session_id": 136090562751728,
+      "log_sequence": 114,
+      "data": {
+        "action": "Navigation to 'Mempool Data' tab",
+        "details": {
+          "tab_name": "Mempool Data",
+          "available_tabs": [
+            "Why Bitcoin?",
+            "Bitcoin OHLC",
+            "Mempool Data",
+            "Portfolio Value",
+            "Bitcoin Metrics",
+            "Debug Logs"
+          ]
+        },
+        "timestamp_iso": "2025-07-19T03:42:53.061984"
+      }
+    },
+    {
+      "timestamp": "03:42:53.062",
+      "timestamp_full": "2025-07-19T03:42:53.062083",
+      "level": "INFO",
+      "message": "\ud83d\udc64 USER ACTION: Viewing Mempool Data page",
+      "context": "user_interaction",
+      "session_id": 136090562751728,
+      "log_sequence": 115,
+      "data": {
+        "action": "Viewing Mempool Data page",
+        "details": null,
+        "timestamp_iso": "2025-07-19T03:42:53.062063"
+      }
+    },
+    {
+      "timestamp": "03:42:53.064",
+      "timestamp_full": "2025-07-19T03:42:53.064826",
+      "level": "INFO",
+      "message": "\ud83d\udce6 Starting mempool data collection...",
+      "context": "mempool_data_start",
+      "session_id": 136090562751728,
+      "log_sequence": 116
+    },
+    {
+      "timestamp": "03:42:53.065",
+      "timestamp_full": "2025-07-19T03:42:53.065082",
+      "level": "SUCCESS",
+      "message": "\ud83d\udce6 Mempool data loaded successfully. Count: 0",
+      "context": "mempool_data_loaded",
+      "session_id": 136090562751728,
+      "log_sequence": 117
+    },
+    {
+      "timestamp": "03:42:56.927",
+      "timestamp_full": "2025-07-19T03:42:56.927666",
+      "level": "SYSTEM",
+      "message": "\ud83d\ude80 Application startup initiated",
+      "context": "app_lifecycle",
+      "session_id": 136090562751728,
+      "log_sequence": 118,
+      "system_info": {
+        "platform": "Linux",
+        "python_version": "3.13.5",
+        "memory_usage_mb": 185.6171875,
+        "cpu_percent": 0.0
+      }
+    },
+    {
+      "timestamp": "03:42:56.928",
+      "timestamp_full": "2025-07-19T03:42:56.928208",
+      "level": "INFO",
+      "message": "\ud83d\udcf1 Page config set: Bitcoin Crypto Dashboard",
+      "context": "app_config",
+      "session_id": 136090562751728,
+      "log_sequence": 119
+    },
+    {
+      "timestamp": "03:42:56.928",
+      "timestamp_full": "2025-07-19T03:42:56.928292",
+      "level": "INFO",
+      "message": "\ud83d\udd27 Session state initialized",
+      "context": "session_management",
+      "session_id": 136090562751728,
+      "log_sequence": 120
+    },
+    {
+      "timestamp": "03:42:56.929",
+      "timestamp_full": "2025-07-19T03:42:56.929046",
+      "level": "SYSTEM",
+      "message": "Starting comprehensive data loading process...",
+      "context": "data_loading_start",
+      "session_id": 136090562751728,
+      "log_sequence": 121,
+      "system_info": {
+        "platform": "Linux",
+        "python_version": "3.13.5",
+        "memory_usage_mb": 185.6171875,
+        "cpu_percent": 50.0
+      }
+    },
+    {
+      "timestamp": "03:42:56.929",
+      "timestamp_full": "2025-07-19T03:42:56.929576",
+      "level": "INFO",
+      "message": "Clearing price caches...",
+      "context": "cache_management",
+      "session_id": 136090562751728,
+      "log_sequence": 122
+    },
+    {
+      "timestamp": "03:42:56.929",
+      "timestamp_full": "2025-07-19T03:42:56.929783",
+      "level": "SUCCESS",
+      "message": "Caches cleared successfully",
+      "context": "cache_management",
+      "session_id": 136090562751728,
+      "log_sequence": 123
+    },
+    {
+      "timestamp": "03:42:56.929",
+      "timestamp_full": "2025-07-19T03:42:56.929809",
+      "level": "INFO",
+      "message": "Loading mempool data...",
+      "context": "mempool_loading",
+      "session_id": 136090562751728,
+      "log_sequence": 124
+    },
+    {
+      "timestamp": "03:42:56.930",
+      "timestamp_full": "2025-07-19T03:42:56.930377",
+      "level": "DATA",
+      "message": "\u2699\ufe0f DATA PROCESSING: Mempool Info",
+      "context": "processing_mempool_info",
+      "session_id": 136090562751728,
+      "log_sequence": 125,
+      "data": {
+        "operation": "Mempool Info",
+        "input_size": 11,
+        "output_size": 17493,
+        "processing_time_ms": 0,
+        "timestamp_iso": "2025-07-19T03:42:56.930347"
+      }
+    },
+    {
+      "timestamp": "03:42:56.930",
+      "timestamp_full": "2025-07-19T03:42:56.930412",
+      "level": "SUCCESS",
+      "message": "Mempool data loaded in 0ms",
+      "context": "mempool_loading",
+      "session_id": 136090562751728,
+      "log_sequence": 126
+    },
+    {
+      "timestamp": "03:42:56.930",
+      "timestamp_full": "2025-07-19T03:42:56.930432",
+      "level": "INFO",
+      "message": "Loading mempool stats...",
+      "context": "stats_loading",
+      "session_id": 136090562751728,
+      "log_sequence": 127
+    },
+    {
+      "timestamp": "03:42:56.931",
+      "timestamp_full": "2025-07-19T03:42:56.931623",
+      "level": "DATA",
+      "message": "\u2699\ufe0f DATA PROCESSING: Mempool Stats",
+      "context": "processing_mempool_stats",
+      "session_id": 136090562751728,
+      "log_sequence": 128,
+      "data": {
+        "operation": "Mempool Stats",
+        "input_size": 11,
+        "output_size": 45607,
+        "processing_time_ms": 0,
+        "timestamp_iso": "2025-07-19T03:42:56.931594"
+      }
+    },
+    {
+      "timestamp": "03:42:56.931",
+      "timestamp_full": "2025-07-19T03:42:56.931655",
+      "level": "SUCCESS",
+      "message": "Mempool stats loaded in 0ms",
+      "context": "stats_loading",
+      "session_id": 136090562751728,
+      "log_sequence": 129
+    },
+    {
+      "timestamp": "03:42:56.931",
+      "timestamp_full": "2025-07-19T03:42:56.931678",
+      "level": "INFO",
+      "message": "Loading cryptocurrency prices...",
+      "context": "prices_loading",
+      "session_id": 136090562751728,
+      "log_sequence": 130
+    },
+    {
+      "timestamp": "03:42:56.932",
+      "timestamp_full": "2025-07-19T03:42:56.932317",
+      "level": "INFO",
+      "message": "Starting multi-exchange price fetch...",
+      "context": "price_fetch_start",
+      "session_id": 136090562751728,
+      "log_sequence": 131
+    },
+    {
+      "timestamp": "03:42:56.932",
+      "timestamp_full": "2025-07-19T03:42:56.932353",
+      "level": "SUCCESS",
+      "message": "Successfully imported multi_exchange module",
+      "context": "module_import",
+      "session_id": 136090562751728,
+      "log_sequence": 132
+    },
+    {
+      "timestamp": "03:42:56.932",
+      "timestamp_full": "2025-07-19T03:42:56.932380",
+      "level": "SUCCESS",
+      "message": "\ud83c\udf10 API Multi-Exchange SUCCESS: get_multi_exchange_prices() (Nonems)",
+      "context": "api_multi-exchange",
+      "session_id": 136090562751728,
+      "log_sequence": 133,
+      "data": {
+        "api_name": "Multi-Exchange",
+        "endpoint": "get_multi_exchange_prices()",
+        "status": "STARTING",
+        "response_time_ms": null,
+        "timestamp_iso": "2025-07-19T03:42:56.932367"
+      }
+    },
+    {
+      "timestamp": "03:42:58.157",
+      "timestamp_full": "2025-07-19T03:42:58.157458",
+      "level": "DATA",
+      "message": "\u2699\ufe0f DATA PROCESSING: Multi-exchange price aggregation",
+      "context": "processing_multi-exchange_price_aggregation",
+      "session_id": 136090562751728,
+      "log_sequence": 134,
+      "data": {
+        "operation": "Multi-exchange price aggregation",
+        "input_size": 33,
+        "output_size": 36,
+        "processing_time_ms": 1225.08,
+        "timestamp_iso": "2025-07-19T03:42:58.157392"
+      }
+    },
+    {
+      "timestamp": "03:42:58.157",
+      "timestamp_full": "2025-07-19T03:42:58.157515",
+      "level": "INFO",
+      "message": "Multi-exchange result received:",
+      "context": "price_fetch_result",
+      "session_id": 136090562751728,
+      "log_sequence": 135
+    },
+    {
+      "timestamp": "03:42:58.157",
+      "timestamp_full": "2025-07-19T03:42:58.157551",
+      "level": "DATA",
+      "message": "- Success count: 4",
+      "context": "success_metrics",
+      "session_id": 136090562751728,
+      "log_sequence": 136
+    },
+    {
+      "timestamp": "03:42:58.157",
+      "timestamp_full": "2025-07-19T03:42:58.157588",
+      "level": "DATA",
+      "message": "- Total count: 4",
+      "context": "total_metrics",
+      "session_id": 136090562751728,
+      "log_sequence": 137
+    },
+    {
+      "timestamp": "03:42:58.157",
+      "timestamp_full": "2025-07-19T03:42:58.157626",
+      "level": "DATA",
+      "message": "- Sources used: ['KuCoin', 'Coinbase']",
+      "context": "source_metrics",
+      "session_id": 136090562751728,
+      "log_sequence": 138
+    },
+    {
+      "timestamp": "03:42:58.157",
+      "timestamp_full": "2025-07-19T03:42:58.157666",
+      "level": "DATA",
+      "message": "- Errors count: 0",
+      "context": "error_metrics",
+      "session_id": 136090562751728,
+      "log_sequence": 139
+    },
+    {
+      "timestamp": "03:42:58.157",
+      "timestamp_full": "2025-07-19T03:42:58.157706",
+      "level": "DATA",
+      "message": "- Prices keys: ['BTC', 'ETH', 'BNB', 'POL']",
+      "context": "price_keys",
+      "session_id": 136090562751728,
+      "log_sequence": 140
+    },
+    {
+      "timestamp": "03:42:58.157",
+      "timestamp_full": "2025-07-19T03:42:58.157748",
+      "level": "DATA",
+      "message": "- BTC: 118348.3 (type: float, status: VALID)",
+      "context": "price_btc",
+      "session_id": 136090562751728,
+      "log_sequence": 141
+    },
+    {
+      "timestamp": "03:42:58.157",
+      "timestamp_full": "2025-07-19T03:42:58.157786",
+      "level": "DATA",
+      "message": "- ETH: 3595.2 (type: float, status: VALID)",
+      "context": "price_eth",
+      "session_id": 136090562751728,
+      "log_sequence": 142
+    },
+    {
+      "timestamp": "03:42:58.157",
+      "timestamp_full": "2025-07-19T03:42:58.157824",
+      "level": "DATA",
+      "message": "- BNB: 733.528 (type: float, status: VALID)",
+      "context": "price_bnb",
+      "session_id": 136090562751728,
+      "log_sequence": 143
+    },
+    {
+      "timestamp": "03:42:58.157",
+      "timestamp_full": "2025-07-19T03:42:58.157891",
+      "level": "DATA",
+      "message": "- POL: 0.2389 (type: float, status: VALID)",
+      "context": "price_pol",
+      "session_id": 136090562751728,
+      "log_sequence": 144
+    },
+    {
+      "timestamp": "03:42:58.157",
+      "timestamp_full": "2025-07-19T03:42:58.157944",
+      "level": "SUCCESS",
+      "message": "\ud83d\udce1 Data sources: KuCoin, Coinbase",
+      "context": "source_summary",
+      "session_id": 136090562751728,
+      "log_sequence": 145
+    },
+    {
+      "timestamp": "03:42:58.157",
+      "timestamp_full": "2025-07-19T03:42:58.158008",
+      "level": "SUCCESS",
+      "message": "\ud83c\udf10 API Multi-Exchange SUCCESS: get_multi_exchange_prices() (1225.08ms)",
+      "context": "api_multi-exchange",
+      "session_id": 136090562751728,
+      "log_sequence": 146,
+      "data": {
+        "api_name": "Multi-Exchange",
+        "endpoint": "get_multi_exchange_prices()",
+        "status": "SUCCESS",
+        "response_time_ms": 1225.08,
+        "timestamp_iso": "2025-07-19T03:42:58.157982",
+        "response_preview": "Got 4 prices from 2 sources"
+      }
+    },
+    {
+      "timestamp": "03:42:58.158",
+      "timestamp_full": "2025-07-19T03:42:58.158775",
+      "level": "DATA",
+      "message": "\u2699\ufe0f DATA PROCESSING: Crypto Prices",
+      "context": "processing_crypto_prices",
+      "session_id": 136090562751728,
+      "log_sequence": 147,
+      "data": {
+        "operation": "Crypto Prices",
+        "input_size": 11,
+        "output_size": 219,
+        "processing_time_ms": 1227,
+        "timestamp_iso": "2025-07-19T03:42:58.158738"
+      }
+    },
+    {
+      "timestamp": "03:42:58.158",
+      "timestamp_full": "2025-07-19T03:42:58.158829",
+      "level": "SUCCESS",
+      "message": "Crypto prices loaded in 1227ms",
+      "context": "prices_loading",
+      "session_id": 136090562751728,
+      "log_sequence": 148
+    },
+    {
+      "timestamp": "03:42:58.158",
+      "timestamp_full": "2025-07-19T03:42:58.158865",
+      "level": "INFO",
+      "message": "Loading Binance prices...",
+      "context": "binance_loading",
+      "session_id": 136090562751728,
+      "log_sequence": 149
+    },
+    {
+      "timestamp": "03:42:58.159",
+      "timestamp_full": "2025-07-19T03:42:58.159917",
+      "level": "DATA",
+      "message": "\u2699\ufe0f DATA PROCESSING: Binance Prices",
+      "context": "processing_binance_prices",
+      "session_id": 136090562751728,
+      "log_sequence": 150,
+      "data": {
+        "operation": "Binance Prices",
+        "input_size": 11,
+        "output_size": 219,
+        "processing_time_ms": 1,
+        "timestamp_iso": "2025-07-19T03:42:58.159880"
+      }
+    },
+    {
+      "timestamp": "03:42:58.159",
+      "timestamp_full": "2025-07-19T03:42:58.159975",
+      "level": "SUCCESS",
+      "message": "Binance prices loaded in 1ms",
+      "context": "binance_loading",
+      "session_id": 136090562751728,
+      "log_sequence": 151
+    },
+    {
+      "timestamp": "03:42:58.160",
+      "timestamp_full": "2025-07-19T03:42:58.160013",
+      "level": "INFO",
+      "message": "Loading Bitcoin OHLC data...",
+      "context": "ohlc_loading",
+      "session_id": 136090562751728,
+      "log_sequence": 152
+    },
+    {
+      "timestamp": "03:42:58.160",
+      "timestamp_full": "2025-07-19T03:42:58.160575",
+      "level": "ERROR",
+      "message": "\u274c Critical error during data loading: The truth value of a DataFrame is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().",
+      "context": "data_loading_error",
+      "session_id": 136090562751728,
+      "log_sequence": 153,
+      "system_info": {
+        "platform": "Linux",
+        "python_version": "3.13.5",
+        "memory_usage_mb": 185.6171875,
+        "cpu_percent": 66.0
+      },
+      "stack_trace": [
+        "  File \"/usr/local/lib/python3.13/threading.py\", line 1014, in _bootstrap\n    self._bootstrap_inner()\n",
+        "  File \"/usr/local/lib/python3.13/threading.py\", line 1043, in _bootstrap_inner\n    self.run()\n",
+        "  File \"/usr/local/lib/python3.13/threading.py\", line 994, in run\n    self._target(*self._args, **self._kwargs)\n",
+        "  File \"/home/adminuser/venv/lib/python3.13/site-packages/streamlit/runtime/scriptrunner/script_runner.py\", line 378, in _run_script_thread\n    self._run_script(request.rerun_data)\n",
+        "  File \"/home/adminuser/venv/lib/python3.13/site-packages/streamlit/runtime/scriptrunner/script_runner.py\", line 685, in _run_script\n    ) = exec_func_with_error_handling(code_to_exec, ctx)\n",
+        "  File \"/home/adminuser/venv/lib/python3.13/site-packages/streamlit/runtime/scriptrunner/exec_code.py\", line 128, in exec_func_with_error_handling\n    result = func()\n",
+        "  File \"/home/adminuser/venv/lib/python3.13/site-packages/streamlit/runtime/scriptrunner/script_runner.py\", line 669, in code_to_exec\n    exec(code, module.__dict__)  # noqa: S102\n",
+        "  File \"/mount/src/cpw/app.py\", line 247, in <module>\n    main()\n",
+        "  File \"/mount/src/cpw/app.py\", line 205, in main\n    debug_log(f\"\u274c Critical error during data loading: {str(e)}\", \"ERROR\", \"data_loading_error\")\n",
+        "  File \"/mount/src/cpw/utils/system_logger.py\", line 72, in debug_log\n    log_entry['stack_trace'] = traceback.format_stack()\n"
+      ]
+    },
+    {
+      "timestamp": "03:42:58.163",
+      "timestamp_full": "2025-07-19T03:42:58.163676",
+      "level": "INFO",
+      "message": "\ud83d\udc64 USER ACTION: Navigation to 'Portfolio Value' tab",
+      "context": "user_interaction",
+      "session_id": 136090562751728,
+      "log_sequence": 154,
+      "data": {
+        "action": "Navigation to 'Portfolio Value' tab",
+        "details": {
+          "tab_name": "Portfolio Value",
+          "available_tabs": [
+            "Why Bitcoin?",
+            "Bitcoin OHLC",
+            "Mempool Data",
+            "Portfolio Value",
+            "Bitcoin Metrics",
+            "Debug Logs"
+          ]
+        },
+        "timestamp_iso": "2025-07-19T03:42:58.163638"
+      }
+    },
+    {
+      "timestamp": "03:42:58.163",
+      "timestamp_full": "2025-07-19T03:42:58.163740",
+      "level": "INFO",
+      "message": "\ud83d\udc64 USER ACTION: Viewing Portfolio Value page",
+      "context": "user_interaction",
+      "session_id": 136090562751728,
+      "log_sequence": 155,
+      "data": {
+        "action": "Viewing Portfolio Value page",
+        "details": null,
+        "timestamp_iso": "2025-07-19T03:42:58.163718"
+      }
+    },
+    {
+      "timestamp": "03:42:58.166",
+      "timestamp_full": "2025-07-19T03:42:58.166826",
+      "level": "SUCCESS",
+      "message": "\ud83d\udcb0 Prices loaded for portfolio calculation. Available: ['prices', 'errors', 'success_count', 'total_count', 'sources_used', 'sources_info']",
+      "context": "portfolio_prices_loaded",
+      "session_id": 136090562751728,
+      "log_sequence": 156
+    },
+    {
+      "timestamp": "03:43:03.079",
+      "timestamp_full": "2025-07-19T03:43:03.079266",
+      "level": "SYSTEM",
+      "message": "\ud83d\ude80 Application startup initiated",
+      "context": "app_lifecycle",
+      "session_id": 136090562751728,
+      "log_sequence": 157,
+      "system_info": {
+        "platform": "Linux",
+        "python_version": "3.13.5",
+        "memory_usage_mb": 185.90625,
+        "cpu_percent": 52.3
+      }
+    },
+    {
+      "timestamp": "03:43:03.080",
+      "timestamp_full": "2025-07-19T03:43:03.080616",
+      "level": "INFO",
+      "message": "\ud83d\udcf1 Page config set: Bitcoin Crypto Dashboard",
+      "context": "app_config",
+      "session_id": 136090562751728,
+      "log_sequence": 158
+    },
+    {
+      "timestamp": "03:43:03.080",
+      "timestamp_full": "2025-07-19T03:43:03.080674",
+      "level": "INFO",
+      "message": "\ud83d\udd27 Session state initialized",
+      "context": "session_management",
+      "session_id": 136090562751728,
+      "log_sequence": 159
+    },
+    {
+      "timestamp": "03:43:03.081",
+      "timestamp_full": "2025-07-19T03:43:03.081966",
+      "level": "SYSTEM",
+      "message": "Starting comprehensive data loading process...",
+      "context": "data_loading_start",
+      "session_id": 136090562751728,
+      "log_sequence": 160,
+      "system_info": {
+        "platform": "Linux",
+        "python_version": "3.13.5",
+        "memory_usage_mb": 185.90625,
+        "cpu_percent": 100.0
+      }
+    },
+    {
+      "timestamp": "03:43:03.082",
+      "timestamp_full": "2025-07-19T03:43:03.082569",
+      "level": "INFO",
+      "message": "Clearing price caches...",
+      "context": "cache_management",
+      "session_id": 136090562751728,
+      "log_sequence": 161
+    },
+    {
+      "timestamp": "03:43:03.082",
+      "timestamp_full": "2025-07-19T03:43:03.082882",
+      "level": "SUCCESS",
+      "message": "Caches cleared successfully",
+      "context": "cache_management",
+      "session_id": 136090562751728,
+      "log_sequence": 162
+    },
+    {
+      "timestamp": "03:43:03.082",
+      "timestamp_full": "2025-07-19T03:43:03.082935",
+      "level": "INFO",
+      "message": "Loading mempool data...",
+      "context": "mempool_loading",
+      "session_id": 136090562751728,
+      "log_sequence": 163
+    },
+    {
+      "timestamp": "03:43:03.083",
+      "timestamp_full": "2025-07-19T03:43:03.083765",
+      "level": "DATA",
+      "message": "\u2699\ufe0f DATA PROCESSING: Mempool Info",
+      "context": "processing_mempool_info",
+      "session_id": 136090562751728,
+      "log_sequence": 164,
+      "data": {
+        "operation": "Mempool Info",
+        "input_size": 11,
+        "output_size": 17493,
+        "processing_time_ms": 0,
+        "timestamp_iso": "2025-07-19T03:43:03.083722"
+      }
+    },
+    {
+      "timestamp": "03:43:03.083",
+      "timestamp_full": "2025-07-19T03:43:03.083817",
+      "level": "SUCCESS",
+      "message": "Mempool data loaded in 0ms",
+      "context": "mempool_loading",
+      "session_id": 136090562751728,
+      "log_sequence": 165
+    },
+    {
+      "timestamp": "03:43:03.083",
+      "timestamp_full": "2025-07-19T03:43:03.083857",
+      "level": "INFO",
+      "message": "Loading mempool stats...",
+      "context": "stats_loading",
+      "session_id": 136090562751728,
+      "log_sequence": 166
+    },
+    {
+      "timestamp": "03:43:03.085",
+      "timestamp_full": "2025-07-19T03:43:03.085665",
+      "level": "DATA",
+      "message": "\u2699\ufe0f DATA PROCESSING: Mempool Stats",
+      "context": "processing_mempool_stats",
+      "session_id": 136090562751728,
+      "log_sequence": 167,
+      "data": {
+        "operation": "Mempool Stats",
+        "input_size": 11,
+        "output_size": 45607,
+        "processing_time_ms": 0,
+        "timestamp_iso": "2025-07-19T03:43:03.085625"
+      }
+    },
+    {
+      "timestamp": "03:43:03.085",
+      "timestamp_full": "2025-07-19T03:43:03.085720",
+      "level": "SUCCESS",
+      "message": "Mempool stats loaded in 0ms",
+      "context": "stats_loading",
+      "session_id": 136090562751728,
+      "log_sequence": 168
+    },
+    {
+      "timestamp": "03:43:03.085",
+      "timestamp_full": "2025-07-19T03:43:03.085760",
+      "level": "INFO",
+      "message": "Loading cryptocurrency prices...",
+      "context": "prices_loading",
+      "session_id": 136090562751728,
+      "log_sequence": 169
+    },
+    {
+      "timestamp": "03:43:03.086",
+      "timestamp_full": "2025-07-19T03:43:03.086332",
+      "level": "INFO",
+      "message": "Starting multi-exchange price fetch...",
+      "context": "price_fetch_start",
+      "session_id": 136090562751728,
+      "log_sequence": 170
+    },
+    {
+      "timestamp": "03:43:03.086",
+      "timestamp_full": "2025-07-19T03:43:03.086396",
+      "level": "SUCCESS",
+      "message": "Successfully imported multi_exchange module",
+      "context": "module_import",
+      "session_id": 136090562751728,
+      "log_sequence": 171
+    },
+    {
+      "timestamp": "03:43:03.086",
+      "timestamp_full": "2025-07-19T03:43:03.086445",
+      "level": "SUCCESS",
+      "message": "\ud83c\udf10 API Multi-Exchange SUCCESS: get_multi_exchange_prices() (Nonems)",
+      "context": "api_multi-exchange",
+      "session_id": 136090562751728,
+      "log_sequence": 172,
+      "data": {
+        "api_name": "Multi-Exchange",
+        "endpoint": "get_multi_exchange_prices()",
+        "status": "STARTING",
+        "response_time_ms": null,
+        "timestamp_iso": "2025-07-19T03:43:03.086423"
+      }
+    },
+    {
+      "timestamp": "03:43:04.578",
+      "timestamp_full": "2025-07-19T03:43:04.578775",
+      "level": "DATA",
+      "message": "\u2699\ufe0f DATA PROCESSING: Multi-exchange price aggregation",
+      "context": "processing_multi-exchange_price_aggregation",
+      "session_id": 136090562751728,
+      "log_sequence": 173,
+      "data": {
+        "operation": "Multi-exchange price aggregation",
+        "input_size": 33,
+        "output_size": 36,
+        "processing_time_ms": 1492.38,
+        "timestamp_iso": "2025-07-19T03:43:04.578704"
+      }
+    },
+    {
+      "timestamp": "03:43:04.578",
+      "timestamp_full": "2025-07-19T03:43:04.578838",
+      "level": "INFO",
+      "message": "Multi-exchange result received:",
+      "context": "price_fetch_result",
+      "session_id": 136090562751728,
+      "log_sequence": 174
+    },
+    {
+      "timestamp": "03:43:04.578",
+      "timestamp_full": "2025-07-19T03:43:04.578874",
+      "level": "DATA",
+      "message": "- Success count: 4",
+      "context": "success_metrics",
+      "session_id": 136090562751728,
+      "log_sequence": 175
+    },
+    {
+      "timestamp": "03:43:04.578",
+      "timestamp_full": "2025-07-19T03:43:04.578908",
+      "level": "DATA",
+      "message": "- Total count: 4",
+      "context": "total_metrics",
+      "session_id": 136090562751728,
+      "log_sequence": 176
+    },
+    {
+      "timestamp": "03:43:04.578",
+      "timestamp_full": "2025-07-19T03:43:04.578971",
+      "level": "DATA",
+      "message": "- Sources used: ['KuCoin', 'Coinbase']",
+      "context": "source_metrics",
+      "session_id": 136090562751728,
+      "log_sequence": 177
+    },
+    {
+      "timestamp": "03:43:04.578",
+      "timestamp_full": "2025-07-19T03:43:04.579004",
+      "level": "DATA",
+      "message": "- Errors count: 0",
+      "context": "error_metrics",
+      "session_id": 136090562751728,
+      "log_sequence": 178
+    },
+    {
+      "timestamp": "03:43:04.579",
+      "timestamp_full": "2025-07-19T03:43:04.579038",
+      "level": "DATA",
+      "message": "- Prices keys: ['BTC', 'ETH', 'BNB', 'POL']",
+      "context": "price_keys",
+      "session_id": 136090562751728,
+      "log_sequence": 179
+    },
+    {
+      "timestamp": "03:43:04.579",
+      "timestamp_full": "2025-07-19T03:43:04.579077",
+      "level": "DATA",
+      "message": "- BTC: 118348.4 (type: float, status: VALID)",
+      "context": "price_btc",
+      "session_id": 136090562751728,
+      "log_sequence": 180
+    },
+    {
+      "timestamp": "03:43:04.579",
+      "timestamp_full": "2025-07-19T03:43:04.579113",
+      "level": "DATA",
+      "message": "- ETH: 3595.08 (type: float, status: VALID)",
+      "context": "price_eth",
+      "session_id": 136090562751728,
+      "log_sequence": 181
+    },
+    {
+      "timestamp": "03:43:04.579",
+      "timestamp_full": "2025-07-19T03:43:04.579144",
+      "level": "DATA",
+      "message": "- BNB: 733.528 (type: float, status: VALID)",
+      "context": "price_bnb",
+      "session_id": 136090562751728,
+      "log_sequence": 182
+    },
+    {
+      "timestamp": "03:43:04.579",
+      "timestamp_full": "2025-07-19T03:43:04.579173",
+      "level": "DATA",
+      "message": "- POL: 0.2389 (type: float, status: VALID)",
+      "context": "price_pol",
+      "session_id": 136090562751728,
+      "log_sequence": 183
+    },
+    {
+      "timestamp": "03:43:04.579",
+      "timestamp_full": "2025-07-19T03:43:04.579270",
+      "level": "SUCCESS",
+      "message": "\ud83d\udce1 Data sources: KuCoin, Coinbase",
+      "context": "source_summary",
+      "session_id": 136090562751728,
+      "log_sequence": 184
+    },
+    {
+      "timestamp": "03:43:04.579",
+      "timestamp_full": "2025-07-19T03:43:04.579331",
+      "level": "SUCCESS",
+      "message": "\ud83c\udf10 API Multi-Exchange SUCCESS: get_multi_exchange_prices() (1492.38ms)",
+      "context": "api_multi-exchange",
+      "session_id": 136090562751728,
+      "log_sequence": 185,
+      "data": {
+        "api_name": "Multi-Exchange",
+        "endpoint": "get_multi_exchange_prices()",
+        "status": "SUCCESS",
+        "response_time_ms": 1492.38,
+        "timestamp_iso": "2025-07-19T03:43:04.579304",
+        "response_preview": "Got 4 prices from 2 sources"
+      }
+    },
+    {
+      "timestamp": "03:43:04.579",
+      "timestamp_full": "2025-07-19T03:43:04.579989",
+      "level": "DATA",
+      "message": "\u2699\ufe0f DATA PROCESSING: Crypto Prices",
+      "context": "processing_crypto_prices",
+      "session_id": 136090562751728,
+      "log_sequence": 186,
+      "data": {
+        "operation": "Crypto Prices",
+        "input_size": 11,
+        "output_size": 220,
+        "processing_time_ms": 1494,
+        "timestamp_iso": "2025-07-19T03:43:04.579954"
+      }
+    },
+    {
+      "timestamp": "03:43:04.580",
+      "timestamp_full": "2025-07-19T03:43:04.580038",
+      "level": "SUCCESS",
+      "message": "Crypto prices loaded in 1494ms",
+      "context": "prices_loading",
+      "session_id": 136090562751728,
+      "log_sequence": 187
+    },
+    {
+      "timestamp": "03:43:04.580",
+      "timestamp_full": "2025-07-19T03:43:04.580072",
+      "level": "INFO",
+      "message": "Loading Binance prices...",
+      "context": "binance_loading",
+      "session_id": 136090562751728,
+      "log_sequence": 188
+    },
+    {
+      "timestamp": "03:43:04.581",
+      "timestamp_full": "2025-07-19T03:43:04.581089",
+      "level": "DATA",
+      "message": "\u2699\ufe0f DATA PROCESSING: Binance Prices",
+      "context": "processing_binance_prices",
+      "session_id": 136090562751728,
+      "log_sequence": 189,
+      "data": {
+        "operation": "Binance Prices",
+        "input_size": 11,
+        "output_size": 220,
+        "processing_time_ms": 0,
+        "timestamp_iso": "2025-07-19T03:43:04.581053"
+      }
+    },
+    {
+      "timestamp": "03:43:04.581",
+      "timestamp_full": "2025-07-19T03:43:04.581137",
+      "level": "SUCCESS",
+      "message": "Binance prices loaded in 0ms",
+      "context": "binance_loading",
+      "session_id": 136090562751728,
+      "log_sequence": 190
+    },
+    {
+      "timestamp": "03:43:04.581",
+      "timestamp_full": "2025-07-19T03:43:04.581171",
+      "level": "INFO",
+      "message": "Loading Bitcoin OHLC data...",
+      "context": "ohlc_loading",
+      "session_id": 136090562751728,
+      "log_sequence": 191
+    },
+    {
+      "timestamp": "03:43:04.581",
+      "timestamp_full": "2025-07-19T03:43:04.581756",
+      "level": "ERROR",
+      "message": "\u274c Critical error during data loading: The truth value of a DataFrame is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().",
+      "context": "data_loading_error",
+      "session_id": 136090562751728,
+      "log_sequence": 192,
+      "system_info": {
+        "platform": "Linux",
+        "python_version": "3.13.5",
+        "memory_usage_mb": 185.90625,
+        "cpu_percent": 78.7
+      },
+      "stack_trace": [
+        "  File \"/usr/local/lib/python3.13/threading.py\", line 1014, in _bootstrap\n    self._bootstrap_inner()\n",
+        "  File \"/usr/local/lib/python3.13/threading.py\", line 1043, in _bootstrap_inner\n    self.run()\n",
+        "  File \"/usr/local/lib/python3.13/threading.py\", line 994, in run\n    self._target(*self._args, **self._kwargs)\n",
+        "  File \"/home/adminuser/venv/lib/python3.13/site-packages/streamlit/runtime/scriptrunner/script_runner.py\", line 378, in _run_script_thread\n    self._run_script(request.rerun_data)\n",
+        "  File \"/home/adminuser/venv/lib/python3.13/site-packages/streamlit/runtime/scriptrunner/script_runner.py\", line 685, in _run_script\n    ) = exec_func_with_error_handling(code_to_exec, ctx)\n",
+        "  File \"/home/adminuser/venv/lib/python3.13/site-packages/streamlit/runtime/scriptrunner/exec_code.py\", line 128, in exec_func_with_error_handling\n    result = func()\n",
+        "  File \"/home/adminuser/venv/lib/python3.13/site-packages/streamlit/runtime/scriptrunner/script_runner.py\", line 669, in code_to_exec\n    exec(code, module.__dict__)  # noqa: S102\n",
+        "  File \"/mount/src/cpw/app.py\", line 247, in <module>\n    main()\n",
+        "  File \"/mount/src/cpw/app.py\", line 205, in main\n    debug_log(f\"\u274c Critical error during data loading: {str(e)}\", \"ERROR\", \"data_loading_error\")\n",
+        "  File \"/mount/src/cpw/utils/system_logger.py\", line 72, in debug_log\n    log_entry['stack_trace'] = traceback.format_stack()\n"
+      ]
+    },
+    {
+      "timestamp": "03:43:04.585",
+      "timestamp_full": "2025-07-19T03:43:04.585309",
+      "level": "INFO",
+      "message": "\ud83d\udc64 USER ACTION: Navigation to 'Bitcoin Metrics' tab",
+      "context": "user_interaction",
+      "session_id": 136090562751728,
+      "log_sequence": 193,
+      "data": {
+        "action": "Navigation to 'Bitcoin Metrics' tab",
+        "details": {
+          "tab_name": "Bitcoin Metrics",
+          "available_tabs": [
+            "Why Bitcoin?",
+            "Bitcoin OHLC",
+            "Mempool Data",
+            "Portfolio Value",
+            "Bitcoin Metrics",
+            "Debug Logs"
+          ]
+        },
+        "timestamp_iso": "2025-07-19T03:43:04.585262"
+      }
+    },
+    {
+      "timestamp": "03:43:04.585",
+      "timestamp_full": "2025-07-19T03:43:04.585378",
+      "level": "INFO",
+      "message": "\ud83d\udc64 USER ACTION: Viewing Bitcoin Metrics page",
+      "context": "user_interaction",
+      "session_id": 136090562751728,
+      "log_sequence": 194,
+      "data": {
+        "action": "Viewing Bitcoin Metrics page",
+        "details": null,
+        "timestamp_iso": "2025-07-19T03:43:04.585353"
+      }
+    },
+    {
+      "timestamp": "03:43:09.482",
+      "timestamp_full": "2025-07-19T03:43:09.482745",
+      "level": "SYSTEM",
+      "message": "\ud83d\ude80 Application startup initiated",
+      "context": "app_lifecycle",
+      "session_id": 136090562751728,
+      "log_sequence": 195,
+      "system_info": {
+        "platform": "Linux",
+        "python_version": "3.13.5",
+        "memory_usage_mb": 186.5,
+        "cpu_percent": 51.7
+      }
+    },
+    {
+      "timestamp": "03:43:09.483",
+      "timestamp_full": "2025-07-19T03:43:09.483711",
+      "level": "INFO",
+      "message": "\ud83d\udcf1 Page config set: Bitcoin Crypto Dashboard",
+      "context": "app_config",
+      "session_id": 136090562751728,
+      "log_sequence": 196
+    },
+    {
+      "timestamp": "03:43:09.483",
+      "timestamp_full": "2025-07-19T03:43:09.483742",
+      "level": "INFO",
+      "message": "\ud83d\udd27 Session state initialized",
+      "context": "session_management",
+      "session_id": 136090562751728,
+      "log_sequence": 197
+    },
+    {
+      "timestamp": "03:43:09.484",
+      "timestamp_full": "2025-07-19T03:43:09.484589",
+      "level": "SYSTEM",
+      "message": "Starting comprehensive data loading process...",
+      "context": "data_loading_start",
+      "session_id": 136090562751728,
+      "log_sequence": 198,
+      "system_info": {
+        "platform": "Linux",
+        "python_version": "3.13.5",
+        "memory_usage_mb": 186.5,
+        "cpu_percent": 50.0
+      }
+    },
+    {
+      "timestamp": "03:43:09.484",
+      "timestamp_full": "2025-07-19T03:43:09.484915",
+      "level": "INFO",
+      "message": "Clearing price caches...",
+      "context": "cache_management",
+      "session_id": 136090562751728,
+      "log_sequence": 199
+    },
+    {
+      "timestamp": "03:43:09.485",
+      "timestamp_full": "2025-07-19T03:43:09.485128",
+      "level": "SUCCESS",
+      "message": "Caches cleared successfully",
+      "context": "cache_management",
+      "session_id": 136090562751728,
+      "log_sequence": 200
+    },
+    {
+      "timestamp": "03:43:09.485",
+      "timestamp_full": "2025-07-19T03:43:09.485155",
+      "level": "INFO",
+      "message": "Loading mempool data...",
+      "context": "mempool_loading",
+      "session_id": 136090562751728,
+      "log_sequence": 201
+    },
+    {
+      "timestamp": "03:43:09.485",
+      "timestamp_full": "2025-07-19T03:43:09.485646",
+      "level": "DATA",
+      "message": "\u2699\ufe0f DATA PROCESSING: Mempool Info",
+      "context": "processing_mempool_info",
+      "session_id": 136090562751728,
+      "log_sequence": 202,
+      "data": {
+        "operation": "Mempool Info",
+        "input_size": 11,
+        "output_size": 17493,
+        "processing_time_ms": 0,
+        "timestamp_iso": "2025-07-19T03:43:09.485619"
+      }
+    },
+    {
+      "timestamp": "03:43:09.485",
+      "timestamp_full": "2025-07-19T03:43:09.485679",
+      "level": "SUCCESS",
+      "message": "Mempool data loaded in 0ms",
+      "context": "mempool_loading",
+      "session_id": 136090562751728,
+      "log_sequence": 203
+    },
+    {
+      "timestamp": "03:43:09.485",
+      "timestamp_full": "2025-07-19T03:43:09.485700",
+      "level": "INFO",
+      "message": "Loading mempool stats...",
+      "context": "stats_loading",
+      "session_id": 136090562751728,
+      "log_sequence": 204
+    },
+    {
+      "timestamp": "03:43:09.486",
+      "timestamp_full": "2025-07-19T03:43:09.486738",
+      "level": "DATA",
+      "message": "\u2699\ufe0f DATA PROCESSING: Mempool Stats",
+      "context": "processing_mempool_stats",
+      "session_id": 136090562751728,
+      "log_sequence": 205,
+      "data": {
+        "operation": "Mempool Stats",
+        "input_size": 11,
+        "output_size": 45607,
+        "processing_time_ms": 0,
+        "timestamp_iso": "2025-07-19T03:43:09.486714"
+      }
+    },
+    {
+      "timestamp": "03:43:09.486",
+      "timestamp_full": "2025-07-19T03:43:09.486768",
+      "level": "SUCCESS",
+      "message": "Mempool stats loaded in 0ms",
+      "context": "stats_loading",
+      "session_id": 136090562751728,
+      "log_sequence": 206
+    },
+    {
+      "timestamp": "03:43:09.486",
+      "timestamp_full": "2025-07-19T03:43:09.486788",
+      "level": "INFO",
+      "message": "Loading cryptocurrency prices...",
+      "context": "prices_loading",
+      "session_id": 136090562751728,
+      "log_sequence": 207
+    },
+    {
+      "timestamp": "03:43:09.487",
+      "timestamp_full": "2025-07-19T03:43:09.487414",
+      "level": "INFO",
+      "message": "Starting multi-exchange price fetch...",
+      "context": "price_fetch_start",
+      "session_id": 136090562751728,
+      "log_sequence": 208
+    },
+    {
+      "timestamp": "03:43:09.487",
+      "timestamp_full": "2025-07-19T03:43:09.487444",
+      "level": "SUCCESS",
+      "message": "Successfully imported multi_exchange module",
+      "context": "module_import",
+      "session_id": 136090562751728,
+      "log_sequence": 209
+    },
+    {
+      "timestamp": "03:43:09.487",
+      "timestamp_full": "2025-07-19T03:43:09.487471",
+      "level": "SUCCESS",
+      "message": "\ud83c\udf10 API Multi-Exchange SUCCESS: get_multi_exchange_prices() (Nonems)",
+      "context": "api_multi-exchange",
+      "session_id": 136090562751728,
+      "log_sequence": 210,
+      "data": {
+        "api_name": "Multi-Exchange",
+        "endpoint": "get_multi_exchange_prices()",
+        "status": "STARTING",
+        "response_time_ms": null,
+        "timestamp_iso": "2025-07-19T03:43:09.487458"
+      }
+    },
+    {
+      "timestamp": "03:43:10.743",
+      "timestamp_full": "2025-07-19T03:43:10.743636",
+      "level": "DATA",
+      "message": "\u2699\ufe0f DATA PROCESSING: Multi-exchange price aggregation",
+      "context": "processing_multi-exchange_price_aggregation",
+      "session_id": 136090562751728,
+      "log_sequence": 211,
+      "data": {
+        "operation": "Multi-exchange price aggregation",
+        "input_size": 33,
+        "output_size": 36,
+        "processing_time_ms": 1256.18,
+        "timestamp_iso": "2025-07-19T03:43:10.743584"
+      }
+    },
+    {
+      "timestamp": "03:43:10.743",
+      "timestamp_full": "2025-07-19T03:43:10.743672",
+      "level": "INFO",
+      "message": "Multi-exchange result received:",
+      "context": "price_fetch_result",
+      "session_id": 136090562751728,
+      "log_sequence": 212
+    },
+    {
+      "timestamp": "03:43:10.743",
+      "timestamp_full": "2025-07-19T03:43:10.743695",
+      "level": "DATA",
+      "message": "- Success count: 4",
+      "context": "success_metrics",
+      "session_id": 136090562751728,
+      "log_sequence": 213
+    },
+    {
+      "timestamp": "03:43:10.743",
+      "timestamp_full": "2025-07-19T03:43:10.743714",
+      "level": "DATA",
+      "message": "- Total count: 4",
+      "context": "total_metrics",
+      "session_id": 136090562751728,
+      "log_sequence": 214
+    },
+    {
+      "timestamp": "03:43:10.743",
+      "timestamp_full": "2025-07-19T03:43:10.743735",
+      "level": "DATA",
+      "message": "- Sources used: ['KuCoin', 'Coinbase']",
+      "context": "source_metrics",
+      "session_id": 136090562751728,
+      "log_sequence": 215
+    },
+    {
+      "timestamp": "03:43:10.743",
+      "timestamp_full": "2025-07-19T03:43:10.743753",
+      "level": "DATA",
+      "message": "- Errors count: 0",
+      "context": "error_metrics",
+      "session_id": 136090562751728,
+      "log_sequence": 216
+    },
+    {
+      "timestamp": "03:43:10.743",
+      "timestamp_full": "2025-07-19T03:43:10.743772",
+      "level": "DATA",
+      "message": "- Prices keys: ['BTC', 'ETH', 'BNB', 'POL']",
+      "context": "price_keys",
+      "session_id": 136090562751728,
+      "log_sequence": 217
+    },
+    {
+      "timestamp": "03:43:10.743",
+      "timestamp_full": "2025-07-19T03:43:10.743794",
+      "level": "DATA",
+      "message": "- BTC: 118348.3 (type: float, status: VALID)",
+      "context": "price_btc",
+      "session_id": 136090562751728,
+      "log_sequence": 218
+    },
+    {
+      "timestamp": "03:43:10.743",
+      "timestamp_full": "2025-07-19T03:43:10.743814",
+      "level": "DATA",
+      "message": "- ETH: 3595.08 (type: float, status: VALID)",
+      "context": "price_eth",
+      "session_id": 136090562751728,
+      "log_sequence": 219
+    },
+    {
+      "timestamp": "03:43:10.743",
+      "timestamp_full": "2025-07-19T03:43:10.743832",
+      "level": "DATA",
+      "message": "- BNB: 733.528 (type: float, status: VALID)",
+      "context": "price_bnb",
+      "session_id": 136090562751728,
+      "log_sequence": 220
+    },
+    {
+      "timestamp": "03:43:10.743",
+      "timestamp_full": "2025-07-19T03:43:10.743851",
+      "level": "DATA",
+      "message": "- POL: 0.2389 (type: float, status: VALID)",
+      "context": "price_pol",
+      "session_id": 136090562751728,
+      "log_sequence": 221
+    },
+    {
+      "timestamp": "03:43:10.743",
+      "timestamp_full": "2025-07-19T03:43:10.743869",
+      "level": "SUCCESS",
+      "message": "\ud83d\udce1 Data sources: KuCoin, Coinbase",
+      "context": "source_summary",
+      "session_id": 136090562751728,
+      "log_sequence": 222
+    },
+    {
+      "timestamp": "03:43:10.743",
+      "timestamp_full": "2025-07-19T03:43:10.743896",
+      "level": "SUCCESS",
+      "message": "\ud83c\udf10 API Multi-Exchange SUCCESS: get_multi_exchange_prices() (1256.18ms)",
+      "context": "api_multi-exchange",
+      "session_id": 136090562751728,
+      "log_sequence": 223,
+      "data": {
+        "api_name": "Multi-Exchange",
+        "endpoint": "get_multi_exchange_prices()",
+        "status": "SUCCESS",
+        "response_time_ms": 1256.18,
+        "timestamp_iso": "2025-07-19T03:43:10.743884",
+        "response_preview": "Got 4 prices from 2 sources"
+      }
+    },
+    {
+      "timestamp": "03:43:10.744",
+      "timestamp_full": "2025-07-19T03:43:10.744485",
+      "level": "DATA",
+      "message": "\u2699\ufe0f DATA PROCESSING: Crypto Prices",
+      "context": "processing_crypto_prices",
+      "session_id": 136090562751728,
+      "log_sequence": 224,
+      "data": {
+        "operation": "Crypto Prices",
+        "input_size": 11,
+        "output_size": 220,
+        "processing_time_ms": 1257,
+        "timestamp_iso": "2025-07-19T03:43:10.744454"
+      }
+    },
+    {
+      "timestamp": "03:43:10.744",
+      "timestamp_full": "2025-07-19T03:43:10.744519",
+      "level": "SUCCESS",
+      "message": "Crypto prices loaded in 1257ms",
+      "context": "prices_loading",
+      "session_id": 136090562751728,
+      "log_sequence": 225
+    },
+    {
+      "timestamp": "03:43:10.744",
+      "timestamp_full": "2025-07-19T03:43:10.744538",
+      "level": "INFO",
+      "message": "Loading Binance prices...",
+      "context": "binance_loading",
+      "session_id": 136090562751728,
+      "log_sequence": 226
+    },
+    {
+      "timestamp": "03:43:10.745",
+      "timestamp_full": "2025-07-19T03:43:10.745400",
+      "level": "DATA",
+      "message": "\u2699\ufe0f DATA PROCESSING: Binance Prices",
+      "context": "processing_binance_prices",
+      "session_id": 136090562751728,
+      "log_sequence": 227,
+      "data": {
+        "operation": "Binance Prices",
+        "input_size": 11,
+        "output_size": 220,
+        "processing_time_ms": 0,
+        "timestamp_iso": "2025-07-19T03:43:10.745369"
+      }
+    },
+    {
+      "timestamp": "03:43:10.745",
+      "timestamp_full": "2025-07-19T03:43:10.745432",
+      "level": "SUCCESS",
+      "message": "Binance prices loaded in 0ms",
+      "context": "binance_loading",
+      "session_id": 136090562751728,
+      "log_sequence": 228
+    },
+    {
+      "timestamp": "03:43:10.745",
+      "timestamp_full": "2025-07-19T03:43:10.745452",
+      "level": "INFO",
+      "message": "Loading Bitcoin OHLC data...",
+      "context": "ohlc_loading",
+      "session_id": 136090562751728,
+      "log_sequence": 229
+    },
+    {
+      "timestamp": "03:43:10.745",
+      "timestamp_full": "2025-07-19T03:43:10.745834",
+      "level": "ERROR",
+      "message": "\u274c Critical error during data loading: The truth value of a DataFrame is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().",
+      "context": "data_loading_error",
+      "session_id": 136090562751728,
+      "log_sequence": 230,
+      "system_info": {
+        "platform": "Linux",
+        "python_version": "3.13.5",
+        "memory_usage_mb": 186.5,
+        "cpu_percent": 35.7
+      },
+      "stack_trace": [
+        "  File \"/usr/local/lib/python3.13/threading.py\", line 1014, in _bootstrap\n    self._bootstrap_inner()\n",
+        "  File \"/usr/local/lib/python3.13/threading.py\", line 1043, in _bootstrap_inner\n    self.run()\n",
+        "  File \"/usr/local/lib/python3.13/threading.py\", line 994, in run\n    self._target(*self._args, **self._kwargs)\n",
+        "  File \"/home/adminuser/venv/lib/python3.13/site-packages/streamlit/runtime/scriptrunner/script_runner.py\", line 378, in _run_script_thread\n    self._run_script(request.rerun_data)\n",
+        "  File \"/home/adminuser/venv/lib/python3.13/site-packages/streamlit/runtime/scriptrunner/script_runner.py\", line 685, in _run_script\n    ) = exec_func_with_error_handling(code_to_exec, ctx)\n",
+        "  File \"/home/adminuser/venv/lib/python3.13/site-packages/streamlit/runtime/scriptrunner/exec_code.py\", line 128, in exec_func_with_error_handling\n    result = func()\n",
+        "  File \"/home/adminuser/venv/lib/python3.13/site-packages/streamlit/runtime/scriptrunner/script_runner.py\", line 669, in code_to_exec\n    exec(code, module.__dict__)  # noqa: S102\n",
+        "  File \"/mount/src/cpw/app.py\", line 247, in <module>\n    main()\n",
+        "  File \"/mount/src/cpw/app.py\", line 205, in main\n    debug_log(f\"\u274c Critical error during data loading: {str(e)}\", \"ERROR\", \"data_loading_error\")\n",
+        "  File \"/mount/src/cpw/utils/system_logger.py\", line 72, in debug_log\n    log_entry['stack_trace'] = traceback.format_stack()\n"
+      ]
+    },
+    {
+      "timestamp": "03:43:10.748",
+      "timestamp_full": "2025-07-19T03:43:10.748468",
+      "level": "INFO",
+      "message": "\ud83d\udc64 USER ACTION: Navigation to 'Debug Logs' tab",
+      "context": "user_interaction",
+      "session_id": 136090562751728,
+      "log_sequence": 231,
+      "data": {
+        "action": "Navigation to 'Debug Logs' tab",
+        "details": {
+          "tab_name": "Debug Logs",
+          "available_tabs": [
+            "Why Bitcoin?",
+            "Bitcoin OHLC",
+            "Mempool Data",
+            "Portfolio Value",
+            "Bitcoin Metrics",
+            "Debug Logs"
+          ]
+        },
+        "timestamp_iso": "2025-07-19T03:43:10.748443"
+      }
+    },
+    {
+      "timestamp": "03:43:10.748",
+      "timestamp_full": "2025-07-19T03:43:10.748507",
+      "level": "INFO",
+      "message": "\ud83d\udc64 USER ACTION: Viewing Debug Logs page",
+      "context": "user_interaction",
+      "session_id": 136090562751728,
+      "log_sequence": 232,
+      "data": {
+        "action": "Viewing Debug Logs page",
+        "details": null,
+        "timestamp_iso": "2025-07-19T03:43:10.748496"
+      }
+    }
+  ]
+}

@@ -206,6 +206,7 @@ def main():
         except ImportError as e:
             debug_log(f"❌ Import error during data loading: {str(e)}", "ERROR", "import_error")
             st.error(f"🔧 Import Error: {str(e)}")
+            st.code(f"Raw error: {repr(e)}", language="python")
             st.info("💡 This may be due to missing dependencies. Check the 'Debug Logs' tab for details.")
             mempool_data = {'error': 'Import error'}
             mempool_stats = {'error': 'Import error'}
@@ -214,7 +215,8 @@ def main():
             
         except requests.exceptions.RequestException as e:
             debug_log(f"❌ Network error during data loading: {str(e)}", "ERROR", "network_error")
-            st.warning("🌐 Network connectivity issues - using fallback data")
+            st.error(f"🌐 Network Error: {str(e)}")
+            st.code(f"Raw error: {repr(e)}", language="python")
             st.info("💡 Check your internet connection and try refreshing the page.")
             mempool_data = {'error': 'Network error'}
             mempool_stats = {'error': 'Network error'}
@@ -225,8 +227,8 @@ def main():
             debug_log(f"❌ Critical error during data loading: {str(e)}", "ERROR", "data_loading_error")
             debug_log(f"Error type: {type(e).__name__}", "ERROR", "error_details")
             debug_log(f"Error details: {repr(e)}", "ERROR", "error_details")
-            st.warning("⚠️ Using fallback data due to loading errors")
-            st.error(f"🔍 Error details: {str(e)}")
+            st.error(f"❌ Critical Error: {str(e)}")
+            st.code(f"Error type: {type(e).__name__}\nRaw error: {repr(e)}", language="python")
             st.info("💡 Check the 'Debug Logs' tab for detailed error information.")
             mempool_data = {'error': 'Data unavailable'}
             mempool_stats = {'error': 'Data unavailable'}

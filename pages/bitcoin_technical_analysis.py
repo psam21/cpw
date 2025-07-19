@@ -50,7 +50,9 @@ def render_bitcoin_ohlc_page():
             ohlc_data = get_ohlc_data(time_range)
             
             if ohlc_data is None or ohlc_data.empty:
-                st.error("❌ Failed to fetch OHLC data")
+                st.error("❌ Failed to fetch OHLC data - API request returned empty data or failed")
+                st.warning("Raw issue: No data available from CoinGecko API for the selected time range")
+                st.info("💡 Check Debug Logs for detailed API error information")
                 st.stop()
             
             debug_log(f"📈 OHLC data loaded successfully. Records: {len(ohlc_data)}", "SUCCESS", "ohlc_data_loaded")
@@ -90,6 +92,8 @@ def render_bitcoin_ohlc_page():
         except Exception as e:
             debug_log(f"❌ Error in OHLC page: {str(e)}", "ERROR", "ohlc_page_error")
             st.error(f"❌ Error loading OHLC data: {str(e)}")
+            st.code(f"Error type: {type(e).__name__}\nRaw error: {repr(e)}", language="python")
+            st.info("💡 Check Debug Logs for full stack trace and details")
 
 
 @st.cache_data(ttl=300)  # Cache for 5 minutes

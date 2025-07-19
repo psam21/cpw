@@ -90,6 +90,8 @@ def render_portfolio_page():
         except Exception as e:
             debug_log(f"❌ Error in portfolio page: {str(e)}", "ERROR", "portfolio_page_error")
             st.error(f"❌ Error loading portfolio data: {str(e)}")
+            st.code(f"Error type: {type(e).__name__}\nRaw error: {repr(e)}", language="python")
+            st.info("💡 Check Debug Logs for detailed error information")
 
 
 def _render_portfolio_management(current_prices):

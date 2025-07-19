@@ -161,7 +161,9 @@ def render_bitcoin_metrics_page():
             
         except Exception as e:
             st.error(f"❌ Failed to load Bitcoin metrics: {str(e)}")
+            st.code(f"Error type: {type(e).__name__}\nRaw error: {repr(e)}", language="python")
             st.info("🔄 Please try refreshing the page or check your internet connection.")
+            st.info("💡 Check Debug Logs for detailed API failure information")
 
 
 def _render_fear_greed_section(metrics):
