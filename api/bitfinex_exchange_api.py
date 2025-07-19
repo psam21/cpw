@@ -138,7 +138,7 @@ def get_btc_ohlc_data():
         # Fetch all historical data using our efficient function (only 6 requests!)
         df = get_comprehensive_bitcoin_ohlc(symbol='BTCUSD', timeframe='7D', max_requests=6)
         
-        if df is not None and hasattr(df, 'empty') and not df.empty:
+        if df is not None and hasattr(df, 'empty') and df.empty == False:
             weeks_count = len(df)
             years_span = (df.index.max() - df.index.min()).days / 365.25
             print(f"✅ Successfully loaded {weeks_count} weeks ({years_span:.1f} years) of historical Bitcoin data")

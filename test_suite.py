@@ -203,7 +203,7 @@ def test_dataframe_safety():
         if hasattr(empty_df, 'empty') and empty_df.empty:
             pass  # This should work without error
         
-        if hasattr(non_empty_df, 'empty') and not non_empty_df.empty:
+        if hasattr(non_empty_df, 'empty') and non_empty_df.empty == False:
             pass  # This should work without error
         
         return True

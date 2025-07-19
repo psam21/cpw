@@ -13,7 +13,7 @@ def is_valid_data(obj: Any) -> bool:
         return False
 
     if isinstance(obj, pd.DataFrame):
-        return not obj.empty
+        return obj.empty == False
 
     if isinstance(obj, dict):
         d = cast(dict[str, Any], obj)

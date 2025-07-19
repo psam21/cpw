@@ -2,6 +2,7 @@
 Module to fetch mempool data.
 """
 import requests
+import time
 from utils.http_config import default_timeout as TIMEOUT
 
 def get_mempool_info():
@@ -130,12 +131,17 @@ def get_mempool_stats():
     Fetches additional mempool statistics.
     """
     try:
-        # Get network statistics - this endpoint might not exist
+        # Get network statistics - use fees/recommended as base stats
         network_stats = {}
         try:
-            stats_response = requests.get("https://mempool.space/api/v1/statistics", timeout=TIMEOUT)
+            stats_response = requests.get("https://mempool.space/api/v1/fees/recommended", timeout=TIMEOUT)
             if stats_response.status_code == 200:
-                network_stats = stats_response.json()
+                fee_data = stats_response.json()
+                # Create stats structure using fee data
+                network_stats = {
+                    'fee_recommended': fee_data,
+                    'timestamp': int(time.time())
+                }
         except:
             pass
         
@@ -144,12 +150,12 @@ def get_mempool_stats():
         hashrate_response.raise_for_status()
         hashrate = hashrate_response.json()
         
-        # Get mempool size over time - this endpoint might not exist
+        # Get mempool size over time - use 1w endpoint that works
         mempool_size = []
         try:
-            mempool_size_response = requests.get("https://mempool.space/api/v1/statistics/2h", timeout=TIMEOUT)
+            mempool_size_response = requests.get("https://mempool.space/api/v1/statistics/1w", timeout=TIMEOUT)
             if mempool_size_response.status_code == 200:
-                mempool_size = mempool_size_response.json()
+                mempool_size = mempool_size_response.json()[:24]  # Limit to recent data
         except:
             pass
         

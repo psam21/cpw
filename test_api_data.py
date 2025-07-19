@@ -31,7 +31,7 @@ try:
     from pages.bitcoin_technical_analysis import get_ohlc_data
     ohlc = get_ohlc_data('30D')
     print(f'✅ OHLC Data: Success! Got {len(ohlc)} data points')
-    if not ohlc.empty:
+    if ohlc.empty == False:
         print(f'   📈 Latest Close: ${ohlc.iloc[-1]["close"]:,.2f}')
 except Exception as e:
     print(f'❌ OHLC Data: {str(e)}')
