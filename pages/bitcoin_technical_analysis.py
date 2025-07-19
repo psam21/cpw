@@ -95,7 +95,7 @@ def render_bitcoin_ohlc_page():
 @st.cache_data(ttl=300)  # Cache for 5 minutes
 def get_ohlc_data(time_range):
     """Fetch OHLC data from CoinGecko API"""
-    debug_log_api_call("CoinGecko OHLC", f"Fetching {time_range} data")
+    debug_log_api_call("CoinGecko OHLC", f"Fetching {time_range} data", "STARTING")
     
     # Map time ranges to days
     days_map = {
@@ -109,6 +109,9 @@ def get_ohlc_data(time_range):
     days = days_map.get(time_range, 30)
     
     try:
+        import time
+        start_time = time.time()
+        
         url = f"https://api.coingecko.com/api/v3/coins/bitcoin/ohlc"
         params = {
             'vs_currency': 'usd',
@@ -123,11 +126,15 @@ def get_ohlc_data(time_range):
         response = requests.get(url, params=params, headers=headers, timeout=10)
         response.raise_for_status()
         
+        response_time = round((time.time() - start_time) * 1000, 2)
         data = response.json()
         
         if not data:
             debug_log("⚠️ Empty OHLC data received", "WARNING", "ohlc_empty")
+            debug_log_api_call("CoinGecko OHLC", f"Fetching {time_range} data", "EMPTY", response_time)
             return None
+        
+        debug_log_api_call("CoinGecko OHLC", f"Fetching {time_range} data", "SUCCESS", response_time, f"{len(data)} data points")
         
         # Convert to DataFrame
         df = pd.DataFrame(data, columns=['timestamp', 'open', 'high', 'low', 'close'])
@@ -138,10 +145,14 @@ def get_ohlc_data(time_range):
         return df
         
     except requests.exceptions.RequestException as e:
+        response_time = round((time.time() - start_time) * 1000, 2) if 'start_time' in locals() else 0
         debug_log(f"❌ OHLC API request failed: {str(e)}", "ERROR", "ohlc_api_error")
+        debug_log_api_call("CoinGecko OHLC", f"Fetching {time_range} data", "ERROR", response_time, None, str(e))
         return None
     except Exception as e:
+        response_time = round((time.time() - start_time) * 1000, 2) if 'start_time' in locals() else 0
         debug_log(f"❌ OHLC data processing error: {str(e)}", "ERROR", "ohlc_processing_error")
+        debug_log_api_call("CoinGecko OHLC", f"Fetching {time_range} data", "PROCESSING_ERROR", response_time, None, str(e))
         return None
 
 

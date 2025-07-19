@@ -165,7 +165,8 @@ def main():
             # Data loading success display
             if (mempool_data and 'error' not in mempool_data and 
                 mempool_stats and 'error' not in mempool_stats and 
-                crypto_prices and binance_prices):
+                crypto_prices and binance_prices and 
+                btc_data is not None and not btc_data.empty):
                 st.success(f"✅ All cryptocurrency data loaded successfully! ({total_time}ms)")
                 # Success is logged but not displayed to user (already in debug logs)
                 pass
