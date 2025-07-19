@@ -1,0 +1,189 @@
+{
+  "start_time": "2025-07-19T21:53:22.247195",
+  "tests": {
+    "import_streamlit": {
+      "status": "PASS",
+      "message": "Streamlit imported successfully",
+      "data": null,
+      "error": null,
+      "timestamp": "2025-07-19T21:53:22.471419"
+    },
+    "import_pandas": {
+      "status": "PASS",
+      "message": "Pandas imported successfully",
+      "data": null,
+      "error": null,
+      "timestamp": "2025-07-19T21:53:22.706585"
+    },
+    "import_requests": {
+      "status": "PASS",
+      "message": "Requests imported successfully",
+      "data": null,
+      "error": null,
+      "timestamp": "2025-07-19T21:53:22.746912"
+    },
+    "import_system_logger": {
+      "status": "PASS",
+      "message": "System logger imported successfully",
+      "data": null,
+      "error": null,
+      "timestamp": "2025-07-19T21:53:22.749200"
+    },
+    "import_data_validator": {
+      "status": "PASS",
+      "message": "Data validator imported successfully",
+      "data": null,
+      "error": null,
+      "timestamp": "2025-07-19T21:53:22.749317"
+    },
+    "import_multi_exchange": {
+      "status": "PASS",
+      "message": "Multi-exchange API imported successfully",
+      "data": null,
+      "error": null,
+      "timestamp": "2025-07-19T21:53:22.750643"
+    },
+    "import_mempool_data": {
+      "status": "PASS",
+      "message": "Mempool Data module imported successfully",
+      "data": null,
+      "error": null,
+      "timestamp": "2025-07-19T21:53:29.000885"
+    },
+    "crypto_prices_fetch": {
+      "status": "PASS",
+      "message": "Fetched prices for 0 cryptocurrencies in 189ms",
+      "data": {
+        "response_time_ms": 188.5538101196289,
+        "cryptos_found": []
+      },
+      "error": null,
+      "timestamp": "2025-07-19T21:53:22.939245"
+    },
+    "mempool_data_fetch": {
+      "status": "PASS",
+      "message": "Fetched 2 mempool data sections in 5787ms",
+      "data": {
+        "response_time_ms": 5787.4603271484375,
+        "sections_found": [
+          "fees",
+          "difficulty"
+        ]
+      },
+      "error": null,
+      "timestamp": "2025-07-19T21:53:28.726788"
+    },
+    "mempool_fees_validation": {
+      "status": "PASS",
+      "message": "Fee data valid - Fastest: 3 sat/vB",
+      "data": null,
+      "error": null,
+      "timestamp": "2025-07-19T21:53:28.726826"
+    },
+    "bitcoin_metrics_import": {
+      "status": "FAIL",
+      "message": "Bitcoin metrics module not available",
+      "data": null,
+      "error": null,
+      "timestamp": "2025-07-19T21:53:28.726926"
+    },
+    "ohlc_data_fetch": {
+      "status": "PASS",
+      "message": "Fetched 180 OHLC data points in 211ms",
+      "data": {
+        "response_time_ms": 210.53481101989746,
+        "data_points": 180
+      },
+      "error": null,
+      "timestamp": "2025-07-19T21:53:28.937686"
+    },
+    "ohlc_data_structure": {
+      "status": "PASS",
+      "message": "OHLC data structure is valid",
+      "data": null,
+      "error": null,
+      "timestamp": "2025-07-19T21:53:28.937717"
+    },
+    "dataframe_validation_valid": {
+      "status": "PASS",
+      "message": "Valid DataFrame correctly identified",
+      "data": null,
+      "error": null,
+      "timestamp": "2025-07-19T21:53:28.938415"
+    },
+    "dataframe_validation_none": {
+      "status": "PASS",
+      "message": "None DataFrame correctly rejected",
+      "data": null,
+      "error": null,
+      "timestamp": "2025-07-19T21:53:28.938446"
+    },
+    "dataframe_validation_empty": {
+      "status": "PASS",
+      "message": "Empty DataFrame correctly rejected",
+      "data": null,
+      "error": null,
+      "timestamp": "2025-07-19T21:53:28.939406"
+    },
+    "portfolio_calculation": {
+      "status": "PASS",
+      "message": "Portfolio calculation correct: $14,900.00",
+      "data": {
+        "calculated_value": 14900.0,
+        "expected_value": 14900.0
+      },
+      "error": null,
+      "timestamp": "2025-07-19T21:53:28.939492"
+    },
+    "system_logger_basic": {
+      "status": "PASS",
+      "message": "Basic logging functionality works",
+      "data": null,
+      "error": null,
+      "timestamp": "2025-07-19T21:53:28.940135"
+    },
+    "system_logger_error": {
+      "status": "PASS",
+      "message": "Error logging functionality works",
+      "data": null,
+      "error": null,
+      "timestamp": "2025-07-19T21:53:28.948510"
+    },
+    "import_portfolio_calculator": {
+      "status": "PASS",
+      "message": "Portfolio Calculator module imported successfully",
+      "data": null,
+      "error": null,
+      "timestamp": "2025-07-19T21:53:29.000698"
+    },
+    "import_bitcoin_education": {
+      "status": "PASS",
+      "message": "Bitcoin Education module imported successfully",
+      "data": null,
+      "error": null,
+      "timestamp": "2025-07-19T21:53:29.000738"
+    },
+    "import_bitcoin_metrics_dashboard": {
+      "status": "PASS",
+      "message": "Bitcoin Metrics Dashboard module imported successfully",
+      "data": null,
+      "error": null,
+      "timestamp": "2025-07-19T21:53:29.000909"
+    },
+    "import_mempool_network_dashboard": {
+      "status": "PASS",
+      "message": "Mempool Network Dashboard module imported successfully",
+      "data": null,
+      "error": null,
+      "timestamp": "2025-07-19T21:53:29.000928"
+    }
+  },
+  "summary": {
+    "total_tests": 24,
+    "passed": 23,
+    "failed": 1,
+    "success_rate": "95.8%"
+  },
+  "errors": [],
+  "end_time": "2025-07-19T21:53:29.000937"
+}
