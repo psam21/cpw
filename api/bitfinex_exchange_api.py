@@ -73,7 +73,7 @@ def get_comprehensive_bitcoin_ohlc(symbol='BTCUSD', timeframe='7D', max_requests
                 limit=120  # Bitfinex max for weekly candles
             )
             
-            if batch_df is None or batch_df.empty:
+            if batch_df is None or (hasattr(batch_df, 'empty') and batch_df.empty):
                 print("📭 No more data available or API error")
                 break
             
@@ -137,7 +137,7 @@ def get_btc_ohlc_data():
         # Fetch all historical data using our efficient function (only 6 requests!)
         df = get_comprehensive_bitcoin_ohlc(symbol='BTCUSD', timeframe='7D', max_requests=6)
         
-        if df is not None and not df.empty:
+        if df is not None and hasattr(df, 'empty') and not df.empty:
             weeks_count = len(df)
             years_span = (df.index.max() - df.index.min()).days / 365.25
             print(f"✅ Successfully loaded {weeks_count} weeks ({years_span:.1f} years) of historical Bitcoin data")
