@@ -49,9 +49,15 @@ def render_bitcoin_ohlc_page():
         try:
             ohlc_data = get_ohlc_data(time_range)
             
-            if ohlc_data is None or ohlc_data.empty:
-                st.error("❌ Failed to fetch OHLC data - API request returned empty data or failed")
+            # Safe DataFrame validation
+            if ohlc_data is None:
+                st.error("❌ Failed to fetch OHLC data - API request returned None")
                 st.warning("Raw issue: No data available from CoinGecko API for the selected time range")
+                st.info("💡 Check Debug Logs for detailed API error information")
+                st.stop()
+            elif hasattr(ohlc_data, 'empty') and ohlc_data.empty:
+                st.error("❌ Failed to fetch OHLC data - API request returned empty data")
+                st.warning("Raw issue: Empty DataFrame returned from CoinGecko API")
                 st.info("💡 Check Debug Logs for detailed API error information")
                 st.stop()
             
@@ -172,7 +178,7 @@ def _render_current_price_overview(current_price, ohlc_data):
         else:
             st.metric("💵 Current Price", "Loading...")
     
-    if not ohlc_data.empty:
+    if hasattr(ohlc_data, 'empty') and not ohlc_data.empty and len(ohlc_data) > 0:
         latest = ohlc_data.iloc[-1]
         previous = ohlc_data.iloc[-2] if len(ohlc_data) > 1 else latest
         
@@ -198,7 +204,7 @@ def _render_current_price_overview(current_price, ohlc_data):
 
 def _render_candlestick_chart(ohlc_data, time_range):
     """Render the main candlestick chart"""
-    if ohlc_data.empty:
+    if not hasattr(ohlc_data, 'empty') or ohlc_data.empty or len(ohlc_data) == 0:
         st.warning("⚠️ No OHLC data available for chart")
         return
     
@@ -256,7 +262,7 @@ def _render_candlestick_chart(ohlc_data, time_range):
 
 def _render_technical_indicators(ohlc_data):
     """Render technical analysis indicators"""
-    if ohlc_data.empty:
+    if not hasattr(ohlc_data, 'empty') or ohlc_data.empty or len(ohlc_data) == 0:
         st.warning("⚠️ No data available for technical analysis")
         return
     
@@ -294,7 +300,7 @@ def _render_technical_indicators(ohlc_data):
             st.plotly_chart(fig_rsi, use_container_width=True)
             
             # Current RSI value
-            current_rsi = rsi.iloc[-1] if not rsi.empty else 0
+            current_rsi = rsi.iloc[-1] if hasattr(rsi, 'empty') and not rsi.empty and len(rsi) > 0 else 0
             rsi_status = "Overbought" if current_rsi > 70 else "Oversold" if current_rsi < 30 else "Neutral"
             st.metric("🎯 Current RSI", f"{current_rsi:.1f}", delta=rsi_status)
         else:
@@ -347,8 +353,8 @@ def _render_technical_indicators(ohlc_data):
             st.plotly_chart(fig_macd, use_container_width=True)
             
             # Current MACD values
-            current_macd = macd_line.iloc[-1] if not macd_line.empty else 0
-            current_signal = signal_line.iloc[-1] if not signal_line.empty else 0
+            current_macd = macd_line.iloc[-1] if hasattr(macd_line, 'empty') and not macd_line.empty and len(macd_line) > 0 else 0
+            current_signal = signal_line.iloc[-1] if hasattr(signal_line, 'empty') and not signal_line.empty and len(signal_line) > 0 else 0
             macd_status = "Bullish" if current_macd > current_signal else "Bearish"
             st.metric("🎯 MACD Signal", macd_status, delta=f"MACD: {current_macd:.2f}")
         else:
@@ -396,7 +402,7 @@ def _render_volume_analysis(ohlc_data):
     
     with col2:
         st.markdown("#### 🎯 Support & Resistance Levels")
-        if not ohlc_data.empty:
+        if hasattr(ohlc_data, 'empty') and not ohlc_data.empty and len(ohlc_data) > 0:
             # Calculate potential support and resistance levels
             recent_data = ohlc_data.tail(30)  # Last 30 periods
             
@@ -425,7 +431,7 @@ def _render_volume_analysis(ohlc_data):
 
 def _render_price_statistics(ohlc_data, time_range):
     """Render comprehensive price statistics"""
-    if ohlc_data.empty:
+    if not hasattr(ohlc_data, 'empty') or ohlc_data.empty or len(ohlc_data) == 0:
         st.warning("⚠️ No data available for statistics")
         return
     

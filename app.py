@@ -161,8 +161,20 @@ def main():
             debug_log(f"- Crypto prices: {'✅' if crypto_prices else '❌'}", "INFO", "data_availability")
             debug_log(f"- Binance prices: {'✅' if binance_prices else '❌'}", "INFO", "data_availability")
             
-            # Check Bitcoin OHLC data validity
-            btc_data_valid = btc_data is not None and not btc_data.empty
+            # Check Bitcoin OHLC data validity with proper None handling
+            try:
+                import pandas as pd
+                if btc_data is None:
+                    btc_data_valid = False
+                elif isinstance(btc_data, pd.DataFrame):
+                    btc_data_valid = not btc_data.empty
+                else:
+                    # btc_data is some other type, treat as invalid
+                    btc_data_valid = False
+            except Exception as e:
+                debug_log(f"Error checking btc_data validity: {str(e)}", "ERROR", "btc_data_check")
+                btc_data_valid = False
+            
             debug_log(f"- Bitcoin OHLC: {'✅' if btc_data_valid else '❌'}", "INFO", "data_availability")
             
             # Data loading success display

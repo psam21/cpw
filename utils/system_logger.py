@@ -113,11 +113,33 @@ def debug_log_api_call(api_name, endpoint, status, response_time=None, response_
 def debug_log_data_processing(operation, input_data, output_data, processing_time=None):
     """Specialized logging for data processing operations"""
     from datetime import datetime
+    import pandas as pd
+    
+    # Safe size calculation that handles DataFrames properly
+    try:
+        if output_data is None:
+            output_size = 0
+        elif isinstance(output_data, pd.DataFrame):
+            output_size = len(output_data) if not output_data.empty else 0
+        else:
+            output_size = len(str(output_data))
+    except Exception:
+        output_size = 0
+    
+    try:
+        if input_data is None:
+            input_size = 0
+        elif isinstance(input_data, pd.DataFrame):
+            input_size = len(input_data) if not input_data.empty else 0
+        else:
+            input_size = len(str(input_data))
+    except Exception:
+        input_size = 0
     
     context_data = {
         'operation': operation,
-        'input_size': len(str(input_data)) if input_data else 0,
-        'output_size': len(str(output_data)) if output_data else 0,
+        'input_size': input_size,
+        'output_size': output_size,
         'processing_time_ms': processing_time,
         'timestamp_iso': datetime.now().isoformat()
     }
