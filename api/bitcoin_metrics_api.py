@@ -5,6 +5,7 @@ Optimized for Streamlit Community Cloud deployment with enhanced debug logging.
 """
 import requests
 import json
+import time
 from datetime import datetime, timedelta
 
 class BitcoinMetrics:
@@ -221,36 +222,162 @@ class BitcoinMetrics:
             return None
     
     def get_blockchain_chart(self, chart_type, timespan="1weeks"):
-        """Get chart data from blockchain.info with enhanced logging"""
-        self.debug_log(f"📊 Fetching {chart_type} chart from Blockchain.info...", "INFO")
+        """Get chart data with alternative sources for deprecated Blockchain.info APIs"""
+        self.debug_log(f"📊 Fetching {chart_type} data from alternative sources...", "INFO")
         
-        # Note: blockchain.info chart APIs have been deprecated/moved
-        # These endpoints now return 404 or redirect to HTML pages
-        self.debug_log(f"⚠️ Blockchain.info chart API deprecated for {chart_type}", "WARNING")
-        
-        # For now, return None and let alternative data sources handle this
-        # Future enhancement: implement alternative data sources for specific charts
-        if chart_type in ['n-active-addresses', 'avg-block-time']:
-            self.debug_log(f"❌ Chart {chart_type} unavailable - API endpoint deprecated", "ERROR")
+        # Use alternative data sources for deprecated Blockchain.info charts
+        try:
+            if chart_type == 'hash-rate':
+                return self.get_hashrate_alternative()
+            elif chart_type == 'n-transactions':
+                return self.get_transactions_alternative()
+            elif chart_type == 'estimated-transaction-volume-usd':
+                return self.get_volume_alternative()
+            elif chart_type == 'miners-revenue':
+                return self.get_miners_revenue_alternative()
+            elif chart_type == 'transaction-fees-usd':
+                return self.get_fees_alternative()
+            elif chart_type == 'mempool-size':
+                return self.get_mempool_size_alternative()
+            elif chart_type == 'avg-block-size':
+                return self.get_block_size_alternative()
+            else:
+                self.debug_log(f"❌ No alternative source available for {chart_type}", "WARNING")
+                return None
+                
+        except Exception as e:
+            self.debug_log(f"❌ Alternative data source failed for {chart_type}: {str(e)}", "ERROR")
             return None
+    
+    def get_hashrate_alternative(self):
+        """Get hashrate data from mempool.space API"""
+        self.debug_log("⛏️ Getting hashrate from mempool.space...", "INFO")
+        url = "https://mempool.space/api/v1/mining/hashrate/3m"
+        data = self.safe_request(url, api_name="Mempool-Hashrate")
         
-        # Try the old endpoint anyway in case some charts still work
-        url = f"https://api.blockchain.info/charts/{chart_type}"
-        params = {'timespan': timespan, 'format': 'json'}
-        data = self.safe_request(url, params, api_name=f"Blockchain.info-{chart_type}")
-        
-        if data and 'values' in data:
-            chart_result = {
-                'values': data['values'],
-                'name': data.get('name', chart_type),
-                'unit': data.get('unit', ''),
-                'description': data.get('description', ''),
-                'source': 'Blockchain.info'
+        if data and isinstance(data, list) and len(data) > 0:
+            # Convert to blockchain.info format
+            values = []
+            for item in data:
+                if 'timestamp' in item and 'avgHashrate' in item:
+                    values.append({
+                        'x': item['timestamp'],
+                        'y': item['avgHashrate'] / 1e18  # Convert to EH/s
+                    })
+            
+            return {
+                'values': values[-30:],  # Last 30 data points
+                'source': 'mempool.space'
             }
-            self.debug_log(f"📊 Blockchain.info {chart_type}: Got {len(data['values'])} data points", "SUCCESS")
-            return chart_result
+        return None
+    
+    def get_transactions_alternative(self):
+        """Get transaction count from mempool.space API"""
+        self.debug_log("🔄 Getting transaction data from mempool.space...", "INFO")
+        url = "https://mempool.space/api/v1/statistics/2w"
+        data = self.safe_request(url, api_name="Mempool-Transactions")
         
-        self.debug_log(f"❌ Blockchain.info {chart_type} chart failed - invalid data structure", "ERROR")
+        if data and isinstance(data, list):
+            values = []
+            for item in data:
+                if 'added' in item and 'tx_count' in item:
+                    values.append({
+                        'x': item['added'],
+                        'y': item['tx_count']
+                    })
+            
+            return {
+                'values': values[-30:],
+                'source': 'mempool.space'
+            }
+        return None
+    
+    def get_volume_alternative(self):
+        """Estimate transaction volume using CoinGecko market data"""
+        self.debug_log("💰 Estimating transaction volume from market data...", "INFO")
+        # Use 24h volume as proxy for transaction volume
+        coingecko_data = self.get_coingecko_data()
+        if coingecko_data and 'total_volume' in coingecko_data:
+            current_time = int(time.time())
+            return {
+                'values': [{
+                    'x': current_time,
+                    'y': coingecko_data['total_volume']
+                }],
+                'source': 'CoinGecko (estimated)'
+            }
+        return None
+    
+    def get_miners_revenue_alternative(self):
+        """Estimate miners revenue from block data"""
+        self.debug_log("💎 Estimating miners revenue...", "INFO")
+        # Simplified estimation: current price * 6.25 BTC per block * 144 blocks per day
+        coingecko_data = self.get_coingecko_data()
+        if coingecko_data and 'current_price' in coingecko_data:
+            daily_revenue = coingecko_data['current_price'] * 6.25 * 144
+            current_time = int(time.time())
+            return {
+                'values': [{
+                    'x': current_time,
+                    'y': daily_revenue
+                }],
+                'source': 'Estimated from block rewards'
+            }
+        return None
+    
+    def get_fees_alternative(self):
+        """Get fee data from mempool.space"""
+        self.debug_log("💸 Getting fee data from mempool.space...", "INFO")
+        url = "https://mempool.space/api/v1/fees/recommended"
+        data = self.safe_request(url, api_name="Mempool-Fees")
+        
+        if data and 'fastestFee' in data:
+            current_time = int(time.time())
+            return {
+                'values': [{
+                    'x': current_time,
+                    'y': data['fastestFee']
+                }],
+                'source': 'mempool.space'
+            }
+        return None
+    
+    def get_mempool_size_alternative(self):
+        """Get mempool size from mempool.space"""
+        self.debug_log("🏊 Getting mempool size from mempool.space...", "INFO")
+        url = "https://mempool.space/api/mempool"
+        data = self.safe_request(url, api_name="Mempool-Size")
+        
+        if data and 'count' in data:
+            current_time = int(time.time())
+            return {
+                'values': [{
+                    'x': current_time,
+                    'y': data['count']
+                }],
+                'source': 'mempool.space'
+            }
+        return None
+    
+    def get_block_size_alternative(self):
+        """Get average block size from recent blocks"""
+        self.debug_log("📦 Getting block size data from mempool.space...", "INFO")
+        url = "https://mempool.space/api/v1/statistics/1w"
+        data = self.safe_request(url, api_name="Mempool-BlockSize")
+        
+        if data and isinstance(data, list):
+            values = []
+            for item in data:
+                if 'added' in item and 'avg_block_size' in item:
+                    values.append({
+                        'x': item['added'],
+                        'y': item['avg_block_size']
+                    })
+            
+            return {
+                'values': values[-30:],
+                'source': 'mempool.space'
+            }
         return None
     
     def get_bitnodes_data(self):
@@ -281,10 +408,19 @@ class BitcoinMetrics:
         return None
     
     def get_global_crypto_data(self):
-        """Get global cryptocurrency market data with enhanced logging"""
+        """Get global cryptocurrency market data with enhanced logging and rate limiting handling"""
         self.debug_log("🌍 Fetching global crypto market data from CoinGecko...", "INFO")
         url = "https://api.coingecko.com/api/v3/global"
+        
+        # First attempt
         data = self.safe_request(url, api_name="CoinGecko-Global")
+        
+        # If rate limited (429), try again after delay
+        if data is None:
+            self.debug_log("⏳ Rate limit detected, waiting 2 seconds before retry...", "WARNING")
+            import time
+            time.sleep(2)
+            data = self.safe_request(url, api_name="CoinGecko-Global-Retry")
         
         if data and 'data' in data:
             global_data = data['data']
@@ -299,8 +435,16 @@ class BitcoinMetrics:
             self.debug_log(f"🌍 Global crypto data: BTC dominance {global_result['btc_dominance']:.1f}%, {global_result['active_cryptocurrencies']} cryptos", "SUCCESS")
             return global_result
         
-        self.debug_log("❌ Global crypto data extraction failed - invalid data structure", "ERROR")
-        return None
+        # If still failing, provide fallback data
+        self.debug_log("❌ Global crypto data extraction failed - using fallback data", "WARNING")
+        return {
+            'total_market_cap_usd': 0,
+            'total_volume_24h': 0,
+            'btc_dominance': 50.0,  # Reasonable fallback
+            'active_cryptocurrencies': 0,
+            'markets': 0,
+            'source': 'Fallback (API unavailable)'
+        }
     
     def get_btc_historical_data(self, days=30):
         """Get historical Bitcoin price data"""
